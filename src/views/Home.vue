@@ -60,7 +60,6 @@
       cocktailsIndex: function () {
         console.log("in cocktails index");
         axios.get("/cocktails").then((response) => {
-          // console.log(response.data);
           this.cocktails = response.data;
         });
       },
