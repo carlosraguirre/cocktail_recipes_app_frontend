@@ -9,7 +9,7 @@
       <h4>Directions</h4>
       <div class="pre-formatted">{{ cocktail.direction }}</div>
       </br>
-      <a v-bind:href="cocktail.recipe_link">Link to Recipe</a>
+      <a v-bind:href="cocktail.recipe_link" target="-blank">Link to Recipe</a>
     </div>
     </br>
     </br>
