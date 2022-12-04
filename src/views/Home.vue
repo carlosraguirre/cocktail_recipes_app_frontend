@@ -48,11 +48,13 @@
       cocktailList() {
         return this.cocktails.filter(cocktail => 
           cocktail.ingredient.toLowerCase().includes(this.search.toLowerCase())
+            || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase())
         );
       },
       filterCocktails() {
         return this.cocktails.filter(cocktail =>
           cocktail.ingredient.toLowerCase().includes(this.search.toLowerCase())
+            || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase())
         );
       }
     },
