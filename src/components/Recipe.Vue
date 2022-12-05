@@ -1,8 +1,8 @@
 <template>
   <div>
-    <!-- Recipe Index -->
+    <!-- Recipe Index -->    
     <div id="original">
-      <h2>{{ cocktail.cocktail_name}}</h2>
+      <h2>{{ cocktail.cocktail_name }}</h2>
       <h4>Ingredients</h4>
       <div class="pre-formatted">{{ cocktail.ingredient }}</div>
       </br>

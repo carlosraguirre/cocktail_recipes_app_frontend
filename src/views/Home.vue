@@ -84,7 +84,7 @@
 </script>
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -159,5 +159,5 @@ button {
   background: whitesmoke;
   z-index: 999;
   transition: opacity 0.2s ease;
-}
+} */
 </style>
