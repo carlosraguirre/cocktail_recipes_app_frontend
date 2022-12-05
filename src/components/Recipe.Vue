@@ -1,22 +1,37 @@
 <template>
   <div>
-    <!-- Recipe Index -->    
-    <div id="original">
-      <h2>{{ cocktail.cocktail_name }}</h2>
-      <h4>Ingredients</h4>
-      <div class="pre-formatted">{{ cocktail.ingredient }}</div>
-      </br>
-      <h4>Directions</h4>
-      <div class="pre-formatted">{{ cocktail.direction }}</div>
-      </br>
-      <a v-bind:href="cocktail.recipe_link" target="-blank">Link to Recipe</a>
+    <!-- Recipe Index -->
+    <div align="center">
+      <b-card-group columns>
+        <b-card
+          align="center"
+          style="max-width: 30rem;"
+        >
+          <b-card-text>
+            <h2>{{ cocktail.cocktail_name }}</h2>
+            </br>          
+            <h5>Ingredients</h5>
+            <div class="pre-formatted">{{ cocktail.ingredient }}</div>
+            </br>    
+            <h5>Directions</h5>
+            <div class="pre-formatted">{{ cocktail.direction }}</div>
+            </br>
+            <a v-bind:href="cocktail.recipe_link" target="-blank">Link to Recipe</a>
+            </br>
+            </br>
+          </b-card-text>
+
+          <b-row>
+            <b-col lg="6"><b-button variant="info">Edit Recipe</b-button></b-col>
+            <b-col lg="6"><b-button variant="warning">Delete Recipe</b-button></b-col>
+          </b-row>
+        </b-card>
+      </b-card-group>
     </div>
-    </br>
-    </br>
 
     <!-- Edit Recipe -->
     <div>
-      <transition name="modal">
+      <!-- <transition name="modal">
         <div v-if="isEditModalOpen">
           <div class="overlay" v-on:click.self="isEditModalOpen = false;">
             <div class="modal">
@@ -28,20 +43,19 @@
             </div>
           </div>
         </div>
-      </transition>
+      </transition> -->
 
       <!-- Delete & Edit Buttons -->
-      <div id="container">
+      <!-- <div id="container">
         <button v-on:click="destroyCocktail()">Delete Recipe</button> 
         &nbsp;&nbsp;&nbsp;
         <button v-on:click="editModalOpen(cocktail)">
           {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
         </button>
-      </div>
+      </div> -->
 
     </div>
     </br>
-    <hr style="width:60%">
     </br>
   </div>
 </template>
@@ -84,3 +98,5 @@
   }
 
 </script>
+<style scoped>
+</style>

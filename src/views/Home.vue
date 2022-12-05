@@ -11,7 +11,6 @@
       <AddRecipe @addCocktail="addNewCocktail" />
     </div>
     </br>
-    <hr style="width:60%">
 
     <!-- Recipe Component -->
     <Recipe
