@@ -1,4 +1,4 @@
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue, IconsPlugin, BNavbar } from 'bootstrap-vue'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -8,13 +8,14 @@ axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localh
 
 Vue.config.productionTip = false
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
+Vue.component('b-navbar', BNavbar)
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-Vue.use(BootstrapVue)
-Vue.use(IconsPlugin)
+new Vue({
+  router,
+  render: h => h(App)
+}).$mount('#app')

@@ -3,12 +3,12 @@
     <div>
       <!-- Search Bar -->
       </br>
-      <input type="text" v-model="search" placeholder="Search..">
+      <!-- <input type="text" v-model="search" placeholder="Search.."> -->
       </br>
       </br>
       
       <!-- Add Recipe -->
-      <AddRecipe @addCocktail="addNewCocktail" />
+      <NavBar @addCocktail="addNewCocktail" />
     </div>
     </br>
 
@@ -26,11 +26,11 @@
 <script>
   import axios from "axios";
   import Recipe from '@/components/Recipe.vue'
-  import AddRecipe from '@/components/AddRecipe.vue'
+  import NavBar from '@/components/NavBar.vue'
 
   export default {
     components: {
-      AddRecipe,
+      NavBar,
       Recipe
     },
     data: function () {
