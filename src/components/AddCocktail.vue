@@ -1,19 +1,5 @@
 <template>
   <div>
-    <b-navbar style="padding: 20px;" toggleable="lg" type="dark" variant="secondary">
-      <b-navbar-brand href="#">Cocktail Rolodex</b-navbar-brand>
-
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ms-auto">
-        <b-button v-on:click="isAddModalOpen = !isAddModalOpen;">
-          {{ isAddModalOpen ? "Close" : "Add Cocktail Recipe" }}
-        </b-button>        
-        <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" placeholder="Search Recipes"></b-form-input>
-        </b-nav-form>
-      </b-navbar-nav>
-    </b-navbar>
-
     <transition name="modal">
       <div v-if="isAddModalOpen">
         <div class="overlay" v-on:click.self="isAddModalOpen = false;">
@@ -28,15 +14,15 @@
         </div>
       </div>
     </transition>
-    <!-- <button v-on:click="isAddModalOpen = !isAddModalOpen;">
+    <button v-on:click="isAddModalOpen = !isAddModalOpen;">
       {{ isAddModalOpen ? "Close" : "Add Cocktail Recipe" }}
-    </button> -->
+    </button>
   </div>
 </template>
 
 <script>
   import axios from "axios";
-  import BNavbar from 'bootstrap-vue';
+  // import BNavbar from 'bootstrap-vue';
 
   export default {
     data: function () {

@@ -2,13 +2,14 @@
   <div id="app">
     <div>
       <!-- Search Bar -->
-      </br>
-      <!-- <input type="text" v-model="search" placeholder="Search.."> -->
-      </br>
-      </br>
+      <input type="text" v-model="search" placeholder="Search Recipes..">
       
       <!-- Add Recipe -->
-      <NavBar @addCocktail="addNewCocktail" />
+      <AddCocktail @addCocktail="addNewCocktail" > 
+        <div>
+          <b-form-input type="text" v-model="search" placeholder="Search Recipes.."></b-form-input>
+        </div>
+      </AddCocktail>
     </div>
     </br>
 
@@ -26,11 +27,11 @@
 <script>
   import axios from "axios";
   import Recipe from '@/components/Recipe.vue'
-  import NavBar from '@/components/NavBar.vue'
+  import AddCocktail from '@/components/AddCocktail.vue'
 
   export default {
     components: {
-      NavBar,
+      AddCocktail,
       Recipe
     },
     data: function () {
@@ -83,7 +84,7 @@
 </script>
 
 <style>
-/* #app {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -158,5 +159,5 @@ button {
   background: whitesmoke;
   z-index: 999;
   transition: opacity 0.2s ease;
-} */
+}
 </style>
