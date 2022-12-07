@@ -2,16 +2,16 @@
   <div id="app">
     <div>
       <!-- Search Bar -->
+      </br>
       <input type="text" v-model="search" placeholder="Search Recipes..">
+      </br>
+      </br>
       
       <!-- Add Recipe -->
-      <AddCocktail @addCocktail="addNewCocktail" > 
-        <div>
-          <b-form-input type="text" v-model="search" placeholder="Search Recipes.."></b-form-input>
-        </div>
-      </AddCocktail>
+      <AddRecipe @addCocktail="addNewCocktail" /> 
     </div>
     </br>
+    <hr style="width:60%">
 
     <!-- Recipe Component -->
     <Recipe
@@ -26,12 +26,12 @@
 
 <script>
   import axios from "axios";
-  import Recipe from '@/components/Recipe.vue'
-  import AddCocktail from '@/components/AddCocktail.vue'
+  import Recipe from '@/components/Recipe.vue';
+  import AddRecipe from '@/components/AddRecipe.vue';
 
   export default {
     components: {
-      AddCocktail,
+      AddRecipe,
       Recipe
     },
     data: function () {
@@ -47,13 +47,13 @@
     computed: {
       cocktailList() {
         return this.cocktails.filter(cocktail => 
-          cocktail.ingredient.toLowerCase().includes(this.search.toLowerCase())
+          cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase())
             || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase())
         );
       },
       filterCocktails() {
         return this.cocktails.filter(cocktail =>
-          cocktail.ingredient.toLowerCase().includes(this.search.toLowerCase())
+          cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase())
             || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase())
         );
       }
