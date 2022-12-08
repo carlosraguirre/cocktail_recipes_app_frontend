@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="box">
     <!-- Recipe Index -->
     <div id="original">
+    </br>
       <h2>{{ cocktail.cocktail_name}}</h2>    
       <h4>Ingredients</h4>
       <div class="pre-formatted">{{ cocktail.ingredient }}</div>
@@ -41,7 +42,7 @@
 
     </div>
     </br>
-    <hr style="width:60%">
+    <!-- <hr style="width:60%"> -->
     </br>
   </div>
 </template>
@@ -84,3 +85,16 @@
   }
 
 </script>
+<style>
+.box {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+;
+  min-height: 100px;
+  width: 40vw;
+  margin: 100px auto;
+  background: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+}
+</style>

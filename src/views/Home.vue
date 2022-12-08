@@ -102,7 +102,8 @@
   color: #42b983;
 }
 .pre-formatted {
-  white-space: pre;
+  white-space: pre-line;
+  
 }
 .modal {
   width: 500px;
