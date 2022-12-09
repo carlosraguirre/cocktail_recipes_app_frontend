@@ -14,7 +14,7 @@
         </div>
       </div>
     </transition>
-    <button v-on:click="isAddModalOpen = !isAddModalOpen;">
+    <button id="add-button" v-on:click="isAddModalOpen = !isAddModalOpen;">
       {{ isAddModalOpen ? "Close" : "Add Cocktail Recipe" }}
     </button>
   </div>
@@ -85,5 +85,23 @@
   background: whitesmoke;
   z-index: 999;
   transition: opacity 0.2s ease;
+}
+#add-button {
+  background-color: #078bbf;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+#add-button:hover {
+  background-color: #dfe9df;
+  color: black;
+  font-weight: bold;
 }
 </style>

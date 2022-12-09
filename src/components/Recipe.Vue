@@ -2,8 +2,7 @@
   <div class="box">
     <!-- Recipe Index -->
     <div id="original">
-    </br>
-      <h2>{{ cocktail.cocktail_name}}</h2>    
+      <h2>{{ cocktail.cocktail_name}}</h2>
       <h4>Ingredients</h4>
       <div class="pre-formatted">{{ cocktail.ingredient }}</div>
       </br>
@@ -32,17 +31,14 @@
       </transition>
 
       <!-- Delete & Edit Buttons -->
-      <div id="container">
-        <button v-on:click="destroyCocktail()">Delete Recipe</button> 
+      <div id="add-button-container">
+        <button id="button" v-on:click="destroyCocktail()">Delete Recipe</button> 
         &nbsp;&nbsp;&nbsp;
-        <button v-on:click="editModalOpen(cocktail)">
+        <button id="button" v-on:click="editModalOpen(cocktail)">
           {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
         </button>
       </div>
-
     </div>
-    </br>
-    <!-- <hr style="width:60%"> -->
     </br>
   </div>
 </template>
@@ -91,10 +87,25 @@
 ;
   min-height: 100px;
   width: 40vw;
-  margin: 100px auto;
+  margin: 50px auto;
   background: white;
   border-radius: 5px;
   text-align: center;
   padding: 15px;
+}
+#add-button-container {
+  text-align: center;
+}
+#button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
 }
 </style>

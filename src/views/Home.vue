@@ -1,20 +1,18 @@
 <template>
   <div id="app">
-    <div>
-      <!-- Search Bar -->
-      </br>
-      <input type="text" v-model="search" placeholder="Search Recipes..">
-      </br>
-      </br>
-      
-      <!-- Add Recipe -->
-      <AddRecipe @addCocktail="addNewCocktail" /> 
+    <div class="nav-bar">
+      <h1>Cocktail Rolodex</h1>
+      <div class="search">
+        <input type="text" v-model="search" placeholder="Search Recipes..">
+      </div>
+      <div>
+        <AddRecipe @addCocktail="addNewCocktail" />
+      </div>
     </div>
-    </br>
-    <hr style="width:60%">
+    <!-- <hr style="width:60%"> -->
 
     <!-- Recipe Component -->
-    <Recipe
+    <Recipe id="below-nav"
       v-for="cocktail in cocktailList"
       @removeCocktail=deleteCocktail
       @editRecipe=editCocktail
@@ -126,21 +124,6 @@
 .fadeIn-leave-active.modal {
   transform: scale(1.1);
 }
-#container {
-  text-align: center;
-}
-button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 10px;
-}
 .overlay {
   position: fixed;
   top: 0;
@@ -153,5 +136,29 @@ button {
   background: whitesmoke;
   z-index: 999;
   transition: opacity 0.2s ease;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+.nav-bar {
+  display: flex;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  width: 100%;
+  background: rgb(210, 209, 209);
+  padding: 10px;  
+}
+.search {
+  flex: 1;
+}
+.search input {
+  width: 50%;
+}
+#below-nav {
+  margin-top: 170px;
 }
 </style>
