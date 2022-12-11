@@ -11,7 +11,7 @@
     </div>
     </br>
     <div id="below-nav">
-      <p>Number of recipes: {{cocktails.length}}</p>
+      <p>Total number of cocktails: {{cocktails.length}}</p>
     </div>
 
     <!-- Recipe Component -->
