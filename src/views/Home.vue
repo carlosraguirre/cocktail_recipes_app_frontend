@@ -3,7 +3,7 @@
     <div class="nav-bar">
       <h1>Cocktail Rolodex</h1>
       <div class="search">
-        <input type="text" v-model="search" placeholder="Search Recipes..">
+        <input type="search" v-model="search" placeholder="Search Recipes..">
       </div>
       <div>
         <AddRecipe @addCocktail="addNewCocktail" />
@@ -157,6 +157,7 @@ html {
 }
 .search input {
   width: 50%;
+  font-size: 17px;
 }
 #below-nav {
   margin-top: 170px;
