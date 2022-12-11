@@ -9,10 +9,13 @@
         <AddRecipe @addCocktail="addNewCocktail" />
       </div>
     </div>
-    <!-- <hr style="width:60%"> -->
+    </br>
+    <div id="below-nav">
+      <p>Number of recipes: {{cocktails.length}}</p>
+    </div>
 
     <!-- Recipe Component -->
-    <Recipe id="below-nav"
+    <Recipe
       v-for="cocktail in cocktailList"
       @removeCocktail=deleteCocktail
       @editRecipe=editCocktail
@@ -160,6 +163,6 @@ html {
   font-size: 17px;
 }
 #below-nav {
-  margin-top: 170px;
+  margin-top: 100px;
 }
 </style>
