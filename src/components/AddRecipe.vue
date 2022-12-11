@@ -9,7 +9,7 @@
             <p><textarea v-model="newCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
             <p><textarea type="text" v-model="newCocktailParams.direction" placeholder="Directions"></textarea></p>
             <p><input type="text" v-model="newCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-            <button v-on:click="cocktailCreate()">Add recipe</button>
+            <button id="add-button" v-on:click="cocktailCreate()">Add recipe</button>
           </div>
         </div>
       </div>
