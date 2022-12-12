@@ -86,7 +86,7 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 ;
   min-height: 100px;
-  width: 40vw;
+  width: 25vw;
   margin: 50px auto;
   background: white;
   border-radius: 5px;
