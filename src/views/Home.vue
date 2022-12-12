@@ -11,7 +11,7 @@
     </div>
     </br>
     <div id="below-nav">
-      <p>Total number of cocktails: {{cocktails.length}}</p>
+      <p>Total cocktails: {{cocktails.length}}</p>
     </div>
 
     <!-- Recipe Component -->
@@ -149,6 +149,8 @@ html {
 .nav-bar {
   display: flex;
   position: fixed;
+  left: 0;
+  right: 0;
   top: 0;
   align-items: center;
   width: 100%;
@@ -163,6 +165,6 @@ html {
   font-size: 17px;
 }
 #below-nav {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 </style>
