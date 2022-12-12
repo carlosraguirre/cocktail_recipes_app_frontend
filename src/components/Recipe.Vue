@@ -1,45 +1,47 @@
 <template>
-  <div class="box">
-    <!-- Recipe Index -->
-    <div id="original">
-      <h2>{{ cocktail.cocktail_name}}</h2>
-      <h4>Ingredients</h4>
-      <div class="pre-formatted">{{ cocktail.ingredient }}</div>
+  <div class="grid-container">
+    <div class="box">
+      <!-- Recipe Index -->
+      <div id="original">
+        <h2>{{ cocktail.cocktail_name}}</h2>
+        <h4>Ingredients</h4>
+        <div class="pre-formatted">{{ cocktail.ingredient }}</div>
+        </br>
+        <h4>Directions</h4>
+        <div class="pre-formatted">{{ cocktail.direction }}</div>
+        </br>
+        <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Recipe</a>
+      </div>
       </br>
-      <h4>Directions</h4>
-      <div class="pre-formatted">{{ cocktail.direction }}</div>
       </br>
-      <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Recipe</a>
-    </div>
-    </br>
-    </br>
 
-    <!-- Edit Recipe -->
-    <div>
-      <transition name="modal">
-        <div v-if="isEditModalOpen">
-          <div class="overlay" v-on:click.self="isEditModalOpen = false;">
-            <div class="modal">
-              <p><input type="text" v-model="editCocktailParams.cocktail_name" placeholder="Name"></p>
-              <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
-              <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
-              <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-              <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
+      <!-- Edit Recipe -->
+      <div>
+        <transition name="modal">
+          <div v-if="isEditModalOpen">
+            <div class="overlay" v-on:click.self="isEditModalOpen = false;">
+              <div class="modal">
+                <p><input type="text" v-model="editCocktailParams.cocktail_name" placeholder="Name"></p>
+                <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
+                <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
+                <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
+                <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
+              </div>
             </div>
           </div>
-        </div>
-      </transition>
+        </transition>
 
-      <!-- Delete & Edit Buttons -->
-      <div id="button-container">
-        <button id="delete-button" v-on:click="destroyCocktail()">Delete Recipe</button> 
-        &nbsp;&nbsp;&nbsp;
-        <button id="edit-button" v-on:click="editModalOpen(cocktail)">
-          {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
-        </button>
+        <!-- Delete & Edit Buttons -->
+        <div id="button-container">
+          <button id="delete-button" v-on:click="destroyCocktail()">Delete Recipe</button> 
+          &nbsp;&nbsp;&nbsp;
+          <button id="edit-button" v-on:click="editModalOpen(cocktail)">
+            {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
+          </button>
+        </div>
       </div>
+      </br>
     </div>
-    </br>
   </div>
 </template>
 
@@ -87,11 +89,11 @@
 ;
   min-height: 100px;
   width: 25vw;
-  margin: 50px auto;
+  margin: 10px auto;
   background: white;
   border-radius: 5px;
   text-align: center;
-  padding: 15px;
+  padding: 25px;
 }
 #button-container {
   text-align: center;
@@ -131,5 +133,12 @@
   background-color: #078bbf;
   color: black;
   font-weight: bold;
+}
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  row-gap: 10px;
+  column-gap: 10px;
 }
 </style>
