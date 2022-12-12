@@ -24,17 +24,17 @@
               <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
               <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
               <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-              <button v-on:click="updateCocktail()">Save changes</button>
+              <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
             </div>
           </div>
         </div>
       </transition>
 
       <!-- Delete & Edit Buttons -->
-      <div id="add-button-container">
-        <button id="button" v-on:click="destroyCocktail()">Delete Recipe</button> 
+      <div id="button-container">
+        <button id="delete-button" v-on:click="destroyCocktail()">Delete Recipe</button> 
         &nbsp;&nbsp;&nbsp;
-        <button id="button" v-on:click="editModalOpen(cocktail)">
+        <button id="edit-button" v-on:click="editModalOpen(cocktail)">
           {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
         </button>
       </div>
@@ -93,10 +93,10 @@
   text-align: center;
   padding: 15px;
 }
-#add-button-container {
+#button-container {
   text-align: center;
 }
-#button {
+#delete-button {
   background-color: #04AA6D;
   border: none;
   color: white;
@@ -107,5 +107,29 @@
   font-size: 16px;
   margin: 4px 2px;
   border-radius: 10px;
+  font-weight: bold;
+}
+#delete-button:hover {
+  background-color: #e04c0c;
+  color: black;
+  font-weight: bold;
+}
+#edit-button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+#edit-button:hover {
+  background-color: #078bbf;
+  color: black;
+  font-weight: bold;
 }
 </style>
