@@ -9,7 +9,7 @@
             <p><textarea v-model="newCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
             <p><textarea type="text" v-model="newCocktailParams.direction" placeholder="Directions"></textarea></p>
             <p><input type="text" v-model="newCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-            <button id="add-button" v-on:click="cocktailCreate()">Add recipe</button>
+            <button id="add-button-modal" v-on:click="cocktailCreate()">Add recipe</button>
           </div>
         </div>
       </div>
@@ -101,6 +101,25 @@
   font-weight: bold;
 }
 #add-button:hover {
+  background-color: #dfe9df;
+  color: black;
+  font-weight: bold;
+}
+#add-button-modal{
+  background-color: #902695;
+  color: white;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px; 
+}
+#add-button-modal:hover {
   background-color: #dfe9df;
   color: black;
   font-weight: bold;
