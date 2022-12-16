@@ -86,9 +86,8 @@
 <style>
 .box {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-;
   min-height: 100px;
-  width: 25vw;
+  width: 400px;
   margin: 10px auto;
   background: white;
   border-radius: 5px;
@@ -136,8 +135,8 @@
 }
 .grid-container {
   display: inline-grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 20px;
   row-gap: 10px;
   column-gap: 10px;
 }
