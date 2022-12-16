@@ -87,6 +87,7 @@
   transition: opacity 0.2s ease;
 }
 #add-button {
+  font-family: "Roboto Mono", monospace;
   background-color: #078bbf;
   border: none;
   color: white;

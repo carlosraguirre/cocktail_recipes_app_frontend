@@ -98,7 +98,8 @@
   text-align: center;
 }
 #delete-button {
-  background-color: #04AA6D;
+  font-family: "Roboto Mono", monospace;
+  background-color: #902695;
   border: none;
   color: white;
   padding: 10px;
@@ -111,12 +112,13 @@
   font-weight: bold;
 }
 #delete-button:hover {
-  background-color: #e04c0c;
-  color: black;
+  background-color: #e02c0c;
+  color: white;
   font-weight: bold;
 }
 #edit-button {
-  background-color: #04AA6D;
+  font-family: "Roboto Mono", monospace;
+  background-color: #902695;
   border: none;
   color: white;
   padding: 10px;
@@ -129,8 +131,8 @@
   font-weight: bold;
 }
 #edit-button:hover {
-  background-color: #078bbf;
-  color: black;
+  background-color:#04AA6D;
+  color: white;
   font-weight: bold;
 }
 .grid-container {

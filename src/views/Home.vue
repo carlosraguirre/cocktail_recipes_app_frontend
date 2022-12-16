@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <div class="app">
     <div class="nav-bar">
-      <h1>Cocktail Rolodex</h1>
+      <h1 id="app-name">Cocktail Rolodex</h1>
       <div class="search">
-        <input type="search" v-model="search" placeholder="Search Recipes..">
+        <input type="search" v-model="search" placeholder="Search Recipes">
       </div>
-      <div>
+      <div id="add-button-position">
         <AddRecipe @addCocktail="addNewCocktail" />
       </div>
     </div>
@@ -85,12 +85,13 @@
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+.app {
+  font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;  
+  background-color: rgb(246, 245, 247);
 }
 #nav {
   padding: 30px;
@@ -154,7 +155,7 @@ html {
   top: 0;
   align-items: center;
   width: 100%;
-  background: rgb(210, 209, 209);
+  background: white;
   padding: 10px;  
 }
 .search {
@@ -163,8 +164,16 @@ html {
 .search input {
   width: 50%;
   font-size: 17px;
+  font-family: "Roboto Mono", monospace;
 }
 #below-nav {
   margin-top: 150px;
+}
+#app-name {
+  color:#902695;
+  margin: 20px;
+}
+#add-button-position {
+  margin: 20px;
 }
 </style>
