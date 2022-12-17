@@ -87,8 +87,8 @@
 .box {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   min-height: 100px;
-  width: 400px;
-  margin: 10px auto;
+  width: 500px;
+  margin: 40px auto;
   background: white;
   border-radius: 5px;
   text-align: center;
