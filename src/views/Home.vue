@@ -115,7 +115,7 @@
   border-radius: 7px;
   box-shadow: 0 2px 8px 3px;
   transition: all 0.2s ease-in;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Roboto Mono", monospace;
 }
 .fadeIn-enter {
   opacity: 0;
@@ -156,7 +156,7 @@ html {
   align-items: center;
   width: 100%;
   background: white;
-  padding: 10px;  
+  padding: 10px;
 }
 .search {
   flex: 1;
@@ -172,6 +172,7 @@ html {
 #app-name {
   color:#902695;
   margin: 20px;
+  font-size: 35px;
 }
 #add-button-position {
   margin: 20px;
