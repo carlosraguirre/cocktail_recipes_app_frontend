@@ -1,27 +1,34 @@
 <template>
-  <div class="app">
-    <div class="nav-bar">
-      <h1 id="app-name">Cocktail Rolodex</h1>
-      <div class="search">
-        <input type="search" v-model="search" placeholder="Search Recipes">
+  <div v-if="isLoggedIn()">
+    <div class="app">
+      <div class="nav-bar">
+        <h1 id="app-name">Cocktail Rolodex</h1>
+        <div class="search">
+          <input type="search" v-model="search" placeholder="Search Recipes">
+        </div>
+        <div id="add-button-position">
+          <AddRecipe @addCocktail="addNewCocktail" />
+        </div>
       </div>
-      <div id="add-button-position">
-        <AddRecipe @addCocktail="addNewCocktail" />
+      </br>
+      <div id="below-nav">
+        <p>Total cocktails: {{cocktails.length}}</p>
+        <p>logged in? {{ isLoggedIn() }}</p>
+        <p>user id? {{ getUserId() }}</p>
+        <a href="/login">Login</a>
+        </br>
+        <a href="/logout">Logout</a>
       </div>
-    </div>
-    </br>
-    <div id="below-nav">
-      <p>Total cocktails: {{cocktails.length}}</p>
-    </div>
 
-    <!-- Recipe Component -->
-    <Recipe
-      v-for="cocktail in cocktailList"
-      @removeCocktail=deleteCocktail
-      @editRecipe=editCocktail
-      :cocktail="cocktail" 
-      :key="cocktail.id" 
-    />
+      <!-- Recipe Component -->
+      <Recipe
+        v-for="cocktail in cocktailList"
+        @removeCocktail=deleteCocktail
+        @editRecipe=editCocktail
+        :cocktail="cocktail" 
+        :key="cocktail.id" 
+      />
+    </div>
   </div>
 </template>
 
@@ -79,7 +86,17 @@
       },
       editCocktail: function (cocktail) {
         console.log("edit cocktail", cocktail);
-      }
+      },
+      isLoggedIn: function() {
+        if (localStorage.getItem("jwt")) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      getUserId: function() {
+        return localStorage.getItem("user_id");
+      },      
     },
   };
 </script>
