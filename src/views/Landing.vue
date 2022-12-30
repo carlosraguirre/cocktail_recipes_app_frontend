@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <h1 id="app-name">Cocktail Rolodex</h1>
     <div class="login">
       <form v-on:submit.prevent="submit()">
         <h1>Login</h1>
@@ -88,3 +89,11 @@
     },
   };
 </script>
+
+<style>
+#app-name {
+  color:#902695;
+  margin: 20px;
+  font-size: 28px;
+}
+</style>

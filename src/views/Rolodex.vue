@@ -3,7 +3,6 @@
     <div class="app">
       <div class="nav-bar">
         <MenuButton />
-        <!-- <h1 id="app-name">Cocktail Rolodex</h1> -->
         <div class="search">
           <input type="search" v-model="search" placeholder="Search Recipes">
         </div>
