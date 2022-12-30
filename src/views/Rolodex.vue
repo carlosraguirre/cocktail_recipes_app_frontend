@@ -13,10 +13,8 @@
       </div>
       </br>
       <div id="below-nav">
-        <p>Total cocktails: {{cocktails.length}}</p>
         <p>logged in? {{ isLoggedIn() }}</p>
         <p>user id? {{ getUserId() }}</p>
-        <a href="/logout">Logout</a>
       </div>
 
       <!-- Recipe Component -->
@@ -51,7 +49,6 @@
     },
     mounted: function () {
       this.cocktailsIndex();
-
     },
     computed: {
       cocktailList() {

@@ -10,6 +10,7 @@
       <ul id="menu">
         <p id="app-name">Cocktail Rolodex</p>
         <p>Hello, {{ getUserName() }}</p>
+        <p>Saved recipes: {{cocktails.length}}</p>
         <a href="/logout">Logout</a>
       </ul>
     </div>
@@ -17,13 +18,31 @@
 </template>
 
 <script>
-export default {
-  methods: {
-    getUserName: function() {
-      return localStorage.getItem("name");
-    }
-  }
-}
+  import axios from "axios";
+
+  export default {
+    data: function () {
+      return {
+        cocktails: [],
+      };
+    },
+
+    mounted: function () {
+      this.cocktailsIndex();
+    },
+
+    methods: {
+      getUserName: function() {
+        return localStorage.getItem("name");
+      },
+      cocktailsIndex: function () {
+        console.log("in cocktails index");
+        axios.get("/cocktails").then((response) => {
+          this.cocktails = response.data;
+        });
+      },    
+    },  
+  };
 </script>
 
 
