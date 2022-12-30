@@ -8,12 +8,22 @@
       <span></span>
       
       <ul id="menu">
+        <p>Hello {{ getUserName() }}</p>
         <a href="/logout"><li>Logout</li></a>
       </ul>
     </div>
   </nav>
 </template>
 
+<script>
+export default {
+  methods: {
+    getUserName: function() {
+      return localStorage.getItem("name");
+    }
+  }
+}
+</script>
 
 
 <style>
