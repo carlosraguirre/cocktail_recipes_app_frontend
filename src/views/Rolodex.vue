@@ -3,7 +3,7 @@
     <div class="app">
       <div class="nav-bar">
         <MenuButton />
-        <h1 id="app-name">Cocktail Rolodex</h1>
+        <!-- <h1 id="app-name">Cocktail Rolodex</h1> -->
         <div class="search">
           <input type="search" v-model="search" placeholder="Search Recipes">
         </div>
@@ -186,11 +186,6 @@ html {
 }
 #below-nav {
   margin-top: 150px;
-}
-#app-name {
-  color:#902695;
-  margin: 20px;
-  font-size: 35px;
 }
 #add-button-position {
   margin: 20px;

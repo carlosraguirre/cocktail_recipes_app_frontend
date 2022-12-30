@@ -8,8 +8,9 @@
       <span></span>
       
       <ul id="menu">
-        <p>Hello {{ getUserName() }}</p>
-        <a href="/logout"><li>Logout</li></a>
+        <p id="app-name">Cocktail Rolodex</p>
+        <p>Hello, {{ getUserName() }}</p>
+        <a href="/logout">Logout</a>
       </ul>
     </div>
   </nav>
@@ -27,22 +28,19 @@ export default {
 
 
 <style>
-body
-{
-  margin: 0;
-  padding: 0;
-  
-  background: #232323;
-  color: #cdcdcd;
-  font-family: "Roboto Mono", monospace;
+#app-name {
+  color:#902695;
+  margin: 20px;
+  font-size: 28px;
 }
 
 #menuToggle
 {
   display: block;
   position: relative;
-  top: 50px;
-  left: 50px;
+  margin: 20px;
+  /* top: 40px;
+  left: 40px; */
   
   z-index: 1;
   
@@ -62,7 +60,6 @@ body
 {
   color: tomato;
 }
-
 
 #menuToggle input
 {
@@ -89,7 +86,7 @@ body
   margin-bottom: 5px;
   position: relative;
   
-  background: #cdcdcd;
+  background: #902695;
   border-radius: 3px;
   
   z-index: 1;
@@ -136,14 +133,15 @@ body
 #menu
 {
   position: absolute;
-  width: 300px;
+  width: 275px;
   margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
+  padding: 40px;
+  padding-top: 100px;
   
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
   
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
