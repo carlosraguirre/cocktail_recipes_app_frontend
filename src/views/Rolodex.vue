@@ -2,6 +2,7 @@
   <div v-if="isLoggedIn()">
     <div class="app">
       <div class="nav-bar">
+        <MenuButton />
         <h1 id="app-name">Cocktail Rolodex</h1>
         <div class="search">
           <input type="search" v-model="search" placeholder="Search Recipes">
@@ -15,8 +16,6 @@
         <p>Total cocktails: {{cocktails.length}}</p>
         <p>logged in? {{ isLoggedIn() }}</p>
         <p>user id? {{ getUserId() }}</p>
-        <a href="/login">Login</a>
-        </br>
         <a href="/logout">Logout</a>
       </div>
 
@@ -36,11 +35,13 @@
   import axios from "axios";
   import Recipe from '@/components/Recipe.vue';
   import AddRecipe from '@/components/AddRecipe.vue';
+  import MenuButton from '@/components/MenuButton.vue';
 
   export default {
     components: {
       AddRecipe,
-      Recipe
+      Recipe,
+      MenuButton
     },
     data: function () {
       return {
