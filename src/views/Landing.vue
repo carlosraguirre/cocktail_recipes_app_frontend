@@ -139,8 +139,8 @@
 }
 i.arrow-down{
   color: #902695;
-  width:  0.5em;
-  height:  0.7em;
+  width:  0.55em;
+  height:  0.9em;
   display:  inline-block;
   position:  relative;
   background:  currentColor;
@@ -148,7 +148,7 @@ i.arrow-down{
 } i.arrow-down:after{
   border-right:  0.5em solid transparent;
   border-left:  0.5em solid transparent;
-  border-top:  0.4em solid currentColor;
+  border-top:  0.5em solid currentColor;
   position:  absolute;
   content:  "";
   bottom:  -0.3em;
