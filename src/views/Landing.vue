@@ -26,7 +26,7 @@
             <input type="password" v-model="newSessionParams.password" />
           </div>
         </div>
-        <input id="submit-button" type="submit" value="Submit" />
+        <input class="submit-button" type="submit" value="Submit" />
       </form>
     </div>
 
@@ -62,7 +62,7 @@
             <small v-if="newUserParams.password !== newUserParams.password_confirmation"> Passwords do not match!</small>          
           </div>
         </div>
-        <input id="submit-button" type="submit" value="Submit" />
+        <input class="submit-button" type="submit" value="Submit" />
       </form>
     </div>
   </div>
@@ -154,7 +154,7 @@ i.arrow-down{
   bottom:  -0.3em;
   left:  -0.22em;
 }
-#submit-button {
+.submit-button {
   font-family: "Roboto Mono", monospace;
   background-color: #902695;
   border: none;
@@ -168,7 +168,7 @@ i.arrow-down{
   border-radius: 10px;
   font-weight: bold;
 }
-#submit-button:hover {
+.submit-button:hover {
   background-color:#04AA6D;
   color: white;
   font-weight: bold;
