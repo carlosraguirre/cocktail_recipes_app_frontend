@@ -37,7 +37,7 @@
     </br>
 
     <div class="signup">
-      <form v-on:submit.prevent="submit()">
+      <form v-on:submit.prevent="submitSignup()">
         <p id="signup-header">Don't have an account? Signup here <i class="arrow-down"></i></p>
         <h1>Signup</h1>
         <ul>
@@ -80,12 +80,12 @@
       };
     },
     methods: {
-      submit: function () {
+      submitSignup: function () {
         axios
           .post("/users", this.newUserParams)
           .then((response) => {
             console.log(response.data);
-            this.$router.push("/login");
+            this.$router.push("/rolodex");
           })
           .catch((error) => {
             this.errors = error.response.data.errors;
@@ -93,11 +93,11 @@
       },
       submit: function () {
         axios
-          .post("/sessions", this.newSessionParams)
+          .post("/users", this.newSessionParams)
           .then((response) => {
             axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
             localStorage.setItem("jwt", response.data.jwt);
-            this.$router.push("/rolodex");
+            // this.$router.push("/rolodex");
           })
           .catch((error) => {
             console.log(error.response);

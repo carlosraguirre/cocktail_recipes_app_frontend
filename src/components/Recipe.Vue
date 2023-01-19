@@ -63,7 +63,7 @@
       destroyCocktail: function() {
         axios.delete(`/cocktails/${this.cocktail.id}`).then((response) => {
           console.log(this.cocktail.id);
-          this.$emit('removeCocktail', this.cocktail.id);        
+          this.$emit('removeCocktail', this.cocktail.id);
         });
       },
       updateCocktail: function() {

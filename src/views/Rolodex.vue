@@ -80,6 +80,7 @@
       deleteCocktail: function (cocktailId) {
         console.log("delete cocktail", cocktailId);
         this.cocktails = this.cocktails.filter((cocktail) => cocktail.id !== cocktailId);
+        this.search = "";
       },
       editCocktail: function (cocktail) {
         console.log("edit cocktail", cocktail);
