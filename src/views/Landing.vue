@@ -93,11 +93,11 @@
       },
       submit: function () {
         axios
-          .post("/users", this.newSessionParams)
+          .post("/sessions", this.newSessionParams)
           .then((response) => {
             axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
             localStorage.setItem("jwt", response.data.jwt);
-            // this.$router.push("/rolodex");
+            this.$router.push("/rolodex");
           })
           .catch((error) => {
             console.log(error.response);
