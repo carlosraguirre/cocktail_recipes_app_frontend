@@ -1,31 +1,31 @@
 <template>
-  <!-- <div v-if="isLoggedIn()"> -->
-    <div class="app">
-      <div class="nav-bar">
-        <MenuButton />
-        <div class="search">
-          <input type="search" v-model="search" placeholder="Search Recipes">
-        </div>
+  <div class="app">
+    <div class="nav-bar">
+      <MenuButton />
+      <div class="search">
+        <input type="search" v-model="search" placeholder="Search Recipes">
+      </div>
+      <!-- <div v-if="isLoggedIn()"> -->
         <div id="add-button-position">
           <AddRecipe @addCocktail="addNewCocktail" />
         </div>
-      </div>
-      </br>
-      <div id="below-nav">
-        <p>logged in? {{ isLoggedIn() }}</p>
-        <p>user id? {{ getUserId() }}</p>
-      </div>
-
-      <!-- Recipe Component -->
-      <Recipe
-        v-for="cocktail in cocktailList"
-        @removeCocktail=deleteCocktail
-        @editRecipe=editCocktail
-        :cocktail="cocktail" 
-        :key="cocktail.id" 
-      />
+      <!-- </div> -->
     </div>
-  <!-- </div> -->
+    </br>
+    <div id="below-nav">
+      <p>logged in? {{ isLoggedIn() }}</p>
+      <p>user id? {{ getUserId() }}</p>
+    </div>
+
+    <!-- Recipe Component -->
+    <Recipe
+      v-for="cocktail in cocktailList"
+      @removeCocktail=deleteCocktail
+      @editRecipe=editCocktail
+      :cocktail="cocktail" 
+      :key="cocktail.id" 
+    />
+  </div>
 </template>
 
 <script>

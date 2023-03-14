@@ -32,13 +32,15 @@
         </transition>
 
         <!-- Delete & Edit Buttons -->
-        <div id="button-container">
-          <button id="delete-button" v-on:click="destroyCocktail()">Delete Recipe</button> 
-          &nbsp;&nbsp;&nbsp;
-          <button id="edit-button" v-on:click="editModalOpen(cocktail)">
-            {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
-          </button>
-        </div>
+        <!-- <div v-if="isLoggedIn()">           -->
+          <div id="button-container">
+            <button id="delete-button" v-on:click="destroyCocktail()">Delete Recipe</button> 
+            &nbsp;&nbsp;&nbsp;
+            <button id="edit-button" v-on:click="editModalOpen(cocktail)">
+              {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
+            </button>
+          </div>
+        <!-- </div> -->
       </div>
       </br>
     </div>
@@ -78,7 +80,14 @@
         console.log(cocktail);
         this.editCocktailParams = cocktail
         this.isEditModalOpen = !this.isEditModalOpen;
-      },        
+      },  
+      isLoggedIn: function() {
+        if (localStorage.getItem("jwt")) {
+          return true;
+        } else {
+          return false;
+        }
+      },
     },
   }
 
