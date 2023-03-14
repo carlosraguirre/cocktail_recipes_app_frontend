@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isLoggedIn()">
+  <!-- <div v-if="isLoggedIn()"> -->
     <div class="app">
       <div class="nav-bar">
         <MenuButton />
@@ -25,7 +25,7 @@
         :key="cocktail.id" 
       />
     </div>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>

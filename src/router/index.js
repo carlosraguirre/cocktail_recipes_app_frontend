@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Landing from '../views/Landing.vue';
+import AdminLogin from '../views/AdminLogin.vue';
 import Logout from "../views/Logout.vue";
 import Rolodex from "../views/Rolodex.vue";
 
@@ -8,9 +8,9 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'landing',
-    component: Landing
+    path: '/AdminLogin',
+    name: 'AdminLogin',
+    component: AdminLogin
   },
   {
     path: "/logout",
@@ -18,7 +18,7 @@ const routes = [
     component: Logout
   },
   {
-    path: "/rolodex",
+    path: "/",
     name: "rolodex",
     component: Rolodex
   },  
