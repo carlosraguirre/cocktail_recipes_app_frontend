@@ -2,7 +2,7 @@
   <div id="landing-page">
     <div>
       </br>
-      <h1 id="landing-title">Welcome to your</h1>
+      <h1 id="landing-title">Welcome back to your</h1>
       <h1 id="landing-app-name">Cocktail Rolodex</h1>
     </div>
     </br>
@@ -11,7 +11,7 @@
     </br>
     <div class="login">
       <form v-on:submit.prevent="submit()">
-        <p id="login-header">Returning users login below</p>
+        <p id="login-header">Log in below, Carlos o7</p>
         <h1>Login</h1>
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
@@ -30,13 +30,7 @@
       </form>
     </div>
 
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-
-    <div class="signup">
+    <!-- <div class="signup">
       <form v-on:submit.prevent="submitSignup()">
         <p id="signup-header">Don't have an account? Signup here <i class="arrow-down"></i></p>
         <h1>Signup</h1>
@@ -64,7 +58,7 @@
         </div>
         <input class="submit-button" type="submit" value="Submit" />
       </form>
-    </div>
+    </div> -->
   </div>
 </template>
 
