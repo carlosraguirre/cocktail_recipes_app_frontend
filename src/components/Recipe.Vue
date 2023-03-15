@@ -11,6 +11,9 @@
         <div class="pre-formatted">{{ cocktail.direction }}</div>
         </br>
         <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Recipe</a>
+        </br>
+        <h4>Favorite</h4>
+        <div class="pre-formatted">{{ cocktail.favorite }}</div>
       </div>
       </br>
       </br>
@@ -25,6 +28,7 @@
                 <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
                 <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
                 <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
+                <p><input type="text" v-model="editCocktailParams.favorite" placeholder="Favorite?"></p>
                 <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
@@ -32,17 +36,18 @@
         </transition>
 
         <!-- Delete & Edit Buttons -->
-        <!-- <div v-if="isLoggedIn()">           -->
+        <!-- <div v-if="isLoggedIn()"> -->
           <div id="button-container">
             <button id="delete-button" v-on:click="destroyCocktail()">Delete Recipe</button> 
             &nbsp;&nbsp;&nbsp;
             <button id="edit-button" v-on:click="editModalOpen(cocktail)">
               {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
             </button>
+            &nbsp;&nbsp;&nbsp;
+            <button id="favorite-button" v-on:click="isFavorite=!isFavorite">Favorite</button>       
           </div>
         <!-- </div> -->
       </div>
-      </br>
     </div>
   </div>
 </template>
@@ -81,13 +86,13 @@
         this.editCocktailParams = cocktail
         this.isEditModalOpen = !this.isEditModalOpen;
       },  
-      isLoggedIn: function() {
-        if (localStorage.getItem("jwt")) {
-          return true;
-        } else {
-          return false;
-        }
-      },
+      // isLoggedIn: function() {
+      //   if (localStorage.getItem("jwt")) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // },
     },
   }
 
@@ -97,11 +102,11 @@
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   min-height: 100px;
   width: 500px;
-  margin: 40px auto;
+  margin: 4px auto;
   background: white;
-  border-radius: 5px;
+  border-radius: 30px;
   text-align: center;
-  padding: 25px;
+  padding: 22px;
 }
 #button-container {
   text-align: center;
@@ -142,6 +147,19 @@
 #edit-button:hover {
   background-color:#04AA6D;
   color: white;
+  font-weight: bold;
+}
+#favorite-button {
+  font-family: "Roboto Mono", monospace;
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
   font-weight: bold;
 }
 .grid-container {

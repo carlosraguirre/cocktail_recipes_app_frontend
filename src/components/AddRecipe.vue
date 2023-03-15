@@ -9,6 +9,7 @@
             <p><textarea v-model="newCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
             <p><textarea type="text" v-model="newCocktailParams.direction" placeholder="Directions"></textarea></p>
             <p><input type="text" v-model="newCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
+            <p><input type="text" v-model="newCocktailParams.favorite" placeholder="Favorite?"></p>          
             <button id="add-button-modal" v-on:click="cocktailCreate()">Add recipe</button>
           </div>
         </div>
@@ -39,6 +40,7 @@
           ingredient: this.newCocktailParams.ingredient,
           direction: this.newCocktailParams.direction,
           recipe_link: this.newCocktailParams.recipe_link,
+          favorite: this.newCocktailParams.favorite,
         };
         axios.post("/cocktails", cocktailParams).then((response) => {
           // console.log(response.data);

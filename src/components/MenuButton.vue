@@ -9,9 +9,11 @@
       
       <ul id="menu">
         <p id="app-name">Cocktail Rolodex</p>
-        <p>Hello, {{ getUserName() }}</p>
+        <!-- <p>Hello, {{ getUserName() }}</p> -->
         <p>Saved recipes: {{cocktails.length}}</p>
-        <a href="/logout">Logout</a>
+        <!-- <div v-if="isLoggedIn()"> -->
+          <a href="/logout">Logout</a>
+        <!-- </div> -->
       </ul>
     </div>
   </nav>
@@ -40,7 +42,14 @@
         axios.get("/cocktails").then((response) => {
           this.cocktails = response.data;
         });
-      },    
+      },
+      // isLoggedIn: function() {
+      //   if (localStorage.getItem("jwt")) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // },      
     },  
   };
 </script>

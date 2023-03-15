@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app">  
     <div class="nav-bar">
       <MenuButton />
       <div class="search">
@@ -13,8 +13,8 @@
     </div>
     </br>
     <div id="below-nav">
-      <p>logged in? {{ isLoggedIn() }}</p>
-      <p>user id? {{ getUserId() }}</p>
+      <!-- <p>logged in? {{ isLoggedIn() }}</p>
+      <p>user id? {{ getUserId() }}</p> -->
     </div>
 
     <!-- Recipe Component -->
@@ -23,7 +23,7 @@
       @removeCocktail=deleteCocktail
       @editRecipe=editCocktail
       :cocktail="cocktail" 
-      :key="cocktail.id" 
+      :key="cocktail.id"
     />
   </div>
 </template>
@@ -85,16 +85,16 @@
       editCocktail: function (cocktail) {
         console.log("edit cocktail", cocktail);
       },
-      isLoggedIn: function() {
-        if (localStorage.getItem("jwt")) {
-          return true;
-        } else {
-          return false;
-        }
-      },
+      // isLoggedIn: function() {
+      //   if (localStorage.getItem("jwt")) {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // },
       getUserId: function() {
         return localStorage.getItem("user_id");
-      },      
+      },        
     },
   };
 </script>
