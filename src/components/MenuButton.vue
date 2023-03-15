@@ -10,9 +10,11 @@
       <ul id="menu">
         <p id="app-name">Cocktail Rolodex</p>
         <p>Saved recipes: {{cocktails.length}}</p>
-        <!-- <div v-if="isLoggedIn()"> -->
-          <a href="/logout">Logout</a>
-        <!-- </div> -->
+        <a href="/AdminLogin">Admin Login</a>
+        </br>
+        </br>
+        <a href="/logout">Logout</a>
+
       </ul>
     </div>
   </nav>
@@ -33,9 +35,6 @@
     },
 
     methods: {
-      getUserName: function() {
-        return localStorage.getItem("name");
-      },
       cocktailsIndex: function () {
         axios.get("/cocktails").then((response) => {
           this.cocktails = response.data;
@@ -161,8 +160,9 @@
   position: absolute;
   width: 275px;
   margin: -100px 0 0 -50px;
-  padding: 40px;
+  padding: 30px;
   padding-top: 100px;
+  border-radius: 30px;
   
   background: #ededed;
   list-style-type: none;

@@ -79,7 +79,7 @@
           .post("/users", this.newUserParams)
           .then((response) => {
             console.log(response.data);
-            this.$router.push("/rolodex");
+            this.$router.push("/");
           })
           .catch((error) => {
             this.errors = error.response.data.errors;
@@ -91,7 +91,7 @@
           .then((response) => {
             axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
             localStorage.setItem("jwt", response.data.jwt);
-            this.$router.push("/rolodex");
+            this.$router.push("/");
           })
           .catch((error) => {
             console.log(error.response);

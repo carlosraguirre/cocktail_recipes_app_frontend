@@ -5,15 +5,15 @@
       <div class="search">
         <input type="search" v-model="search" placeholder="Search Recipes">
       </div>
-      <!-- <div v-if="isLoggedIn()"> -->
+      <div v-if="isLoggedIn()">
         <div id="add-button-position">
           <AddRecipe @addCocktail="addNewCocktail" />
         </div>
-      <!-- </div> -->
+      </div>
     </div>
     </br>
     <div id="below-nav">
-      <!-- <p>user id? {{ getUserId() }}</p> -->
+
     </div>
 
     <!-- Recipe Component -->
@@ -84,15 +84,12 @@
       editCocktail: function (cocktail) {
         console.log("edit cocktail", cocktail);
       },
-      // isLoggedIn: function() {
-      //   if (localStorage.getItem("jwt")) {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // },
-      getUserId: function() {
-        return localStorage.getItem("user_id");
+      isLoggedIn: function() {
+        if (localStorage.getItem("jwt")) {
+          return true;
+        } else {
+          return false;
+        }
       },
     },
   };

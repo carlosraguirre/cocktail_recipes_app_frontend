@@ -23,7 +23,6 @@
 
 <script>
   import axios from "axios";
-  // import BNavbar from 'bootstrap-vue';
 
   export default {
     data: function () {

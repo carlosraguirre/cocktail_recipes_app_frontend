@@ -36,7 +36,7 @@
         </transition>
 
         <!-- Delete & Edit Buttons -->
-        <!-- <div v-if="isLoggedIn()"> -->
+        <div v-if="isLoggedIn()">
           <div id="button-container">
             <button id="delete-button" v-on:click="destroyCocktail()">Delete Recipe</button> 
             &nbsp;&nbsp;&nbsp;
@@ -44,7 +44,7 @@
               {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
             </button>
           </div>
-        <!-- </div> -->
+        </div>
       </div>
     </div>
   </div>
@@ -84,13 +84,13 @@
         this.editCocktailParams = cocktail
         this.isEditModalOpen = !this.isEditModalOpen;
       },  
-      // isLoggedIn: function() {
-      //   if (localStorage.getItem("jwt")) {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // },
+      isLoggedIn: function() {
+        if (localStorage.getItem("jwt")) {
+          return true;
+        } else {
+          return false;
+        }
+      },
     },
   }
 
