@@ -13,8 +13,7 @@
     </div>
     </br>
     <div id="below-nav">
-      <!-- <p>logged in? {{ isLoggedIn() }}</p>
-      <p>user id? {{ getUserId() }}</p> -->
+      <!-- <p>user id? {{ getUserId() }}</p> -->
     </div>
 
     <!-- Recipe Component -->
@@ -94,7 +93,7 @@
       // },
       getUserId: function() {
         return localStorage.getItem("user_id");
-      },        
+      },
     },
   };
 </script>

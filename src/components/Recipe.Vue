@@ -12,8 +12,8 @@
         </br>
         <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Recipe</a>
         </br>
-        <h4>Favorite</h4>
-        <div class="pre-formatted">{{ cocktail.favorite }}</div>
+        <!-- <h4>Favorite</h4>
+        <div class="pre-formatted">{{ cocktail.favorite }}</div> -->
       </div>
       </br>
       </br>
@@ -28,7 +28,7 @@
                 <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
                 <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
                 <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-                <p><input type="text" v-model="editCocktailParams.favorite" placeholder="Favorite?"></p>
+                <!-- <p><input type="text" v-model="editCocktailParams.favorite" placeholder="Favorite?"></p> -->
                 <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
@@ -43,8 +43,6 @@
             <button id="edit-button" v-on:click="editModalOpen(cocktail)">
               {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
             </button>
-            &nbsp;&nbsp;&nbsp;
-            <button id="favorite-button" v-on:click="isFavorite=!isFavorite">Favorite</button>       
           </div>
         <!-- </div> -->
       </div>

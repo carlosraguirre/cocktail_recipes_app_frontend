@@ -9,7 +9,6 @@
       
       <ul id="menu">
         <p id="app-name">Cocktail Rolodex</p>
-        <!-- <p>Hello, {{ getUserName() }}</p> -->
         <p>Saved recipes: {{cocktails.length}}</p>
         <!-- <div v-if="isLoggedIn()"> -->
           <a href="/logout">Logout</a>
@@ -38,7 +37,6 @@
         return localStorage.getItem("name");
       },
       cocktailsIndex: function () {
-        console.log("in cocktails index");
         axios.get("/cocktails").then((response) => {
           this.cocktails = response.data;
         });
