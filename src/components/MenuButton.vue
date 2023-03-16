@@ -8,7 +8,7 @@
       <span></span>
       
       <ul id="menu">
-        <p id="app-name">Cocktail Rolodex</p>
+        <a id="app-name" style="color: #902695" href="/">Cocktail Rolodex</a>
         <p>Saved recipes: {{cocktails.length}}</p>
         <a href="/AdminLogin">Admin Login</a>
         </br>
@@ -39,14 +39,7 @@
         axios.get("/cocktails").then((response) => {
           this.cocktails = response.data;
         });
-      },
-      // isLoggedIn: function() {
-      //   if (localStorage.getItem("jwt")) {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // },      
+      },   
     },  
   };
 </script>
@@ -55,39 +48,29 @@
 <style>
 #app-name {
   color:#902695;
-  margin: 20px;
+  margin: auto;
   font-size: 28px;
 }
-
-#menuToggle
-{
+#menuToggle {
   display: block;
   position: relative;
   margin: 20px;
-  /* top: 40px;
-  left: 40px; */
   
   z-index: 1;
   
   -webkit-user-select: none;
   user-select: none;
 }
-
-#menuToggle a
-{
+#menuToggle a {
   text-decoration: none;
   color: #232323;
   
   transition: color 0.3s ease;
 }
-
-#menuToggle a:hover
-{
+#menuToggle a:hover {
   color: tomato;
 }
-
-#menuToggle input
-{
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
@@ -102,9 +85,7 @@
   
   -webkit-touch-callout: none;
 }
-
-#menuToggle span
-{
+#menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
@@ -122,46 +103,34 @@
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
 }
-
-#menuToggle span:first-child
-{
+#menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
-
-#menuToggle span:nth-last-child(2)
-{
+#menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
-
-#menuToggle input:checked ~ span
-{
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
-
-#menuToggle input:checked ~ span:nth-last-child(3)
-{
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
-
-#menuToggle input:checked ~ span:nth-last-child(2)
-{
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
-
 /*
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
-{
+#menu {
   position: absolute;
   width: 275px;
   margin: -100px 0 0 -50px;
   padding: 30px;
-  padding-top: 100px;
+  padding-top: 110px;
   border-radius: 30px;
   
   background: #ededed;
@@ -174,15 +143,11 @@
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
-
-#menu li
-{
+#menu li {
   padding: 10px 0;
   font-size: 22px;
 }
-
-#menuToggle input:checked ~ ul
-{
+#menuToggle input:checked ~ ul {
   transform: none;
 }
 </style>

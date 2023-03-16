@@ -1,5 +1,6 @@
 <template>
   <div id="landing-page">
+    <MenuButton />    
     <div>
       </br>
       <h1 id="landing-title">Welcome back to your</h1>
@@ -12,10 +13,11 @@
     <div class="login">
       <form v-on:submit.prevent="submit()">
         <p id="login-header">Log in below, Carlos o7</p>
-        <h1>Login</h1>
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
+        </br>
+        </br>
         <div class="form-titles">
           <div>
             <label>Email: </label>
@@ -26,7 +28,7 @@
             <input type="password" v-model="newSessionParams.password" />
           </div>
         </div>
-        <input class="submit-button" type="submit" value="Submit" />
+        <input class="submit-button" type="submit" value="Login" />
       </form>
     </div>
 
@@ -64,8 +66,12 @@
 
 <script>
   import axios from "axios";
+  import MenuButton from '@/components/MenuButton.vue';
 
   export default {
+    components: {
+      MenuButton
+    },
     data: function () {
       return {
         newUserParams: {},
