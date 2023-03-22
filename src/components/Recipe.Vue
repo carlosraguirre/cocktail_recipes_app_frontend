@@ -63,7 +63,7 @@
         isEditModalOpen: false,
       };
     },
-
+  
     methods: {     
       destroyCocktail: function() {
         axios.delete(`/cocktails/${this.cocktail.id}`).then((response) => {
