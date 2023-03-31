@@ -29,9 +29,9 @@
 
 <script>
   import axios from "axios";
-  import Recipe from '@/components/Recipe.vue';
-  import AddRecipe from '@/components/AddRecipe.vue';
-  import MenuButton from '@/components/MenuButton.vue';
+  import Recipe from '../components/Recipe.vue';
+  import AddRecipe from '../components/AddRecipe.vue';
+  import MenuButton from '../components/MenuButton.vue';
 
   export default {
     components: {
