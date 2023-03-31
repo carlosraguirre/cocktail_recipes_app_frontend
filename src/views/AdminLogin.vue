@@ -66,7 +66,7 @@
 
 <script>
   import axios from "axios";
-  import MenuButton from '@/components/MenuButton.vue';
+  import MenuButton from '../components/MenuButton.vue';
 
   export default {
     components: {
