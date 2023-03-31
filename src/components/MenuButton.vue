@@ -39,7 +39,7 @@
         axios.get("/cocktails").then((response) => {
           this.cocktails = response.data;
         });
-      },   
+      },
     },  
   };
 </script>
