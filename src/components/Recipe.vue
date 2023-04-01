@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-container">
+  <div class="boxes">
     <div class="box">
       <!-- Recipe Index -->
       <div id="original">
@@ -98,13 +98,29 @@
 <style>
 .box {
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  min-height: 100px;
+  min-height: 100%;
   width: 500px;
   margin: 4px auto;
   background: white;
   border-radius: 30px;
   text-align: center;
-  padding: 22px;
+  padding: 1rem;
+}
+.boxes {
+  display: inline-grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));  
+  padding: 15px;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+@media only screen and (max-width: 725px) {
+  .box {
+    width: 100%;
+    font-size: 12px;
+  }
+  #button-container {
+    display: flex;
+  }
 }
 #button-container {
   text-align: center;
@@ -159,12 +175,5 @@
   margin: 4px 2px;
   border-radius: 10px;
   font-weight: bold;
-}
-.grid-container {
-  display: inline-grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 20px;
-  row-gap: 10px;
-  column-gap: 10px;
 }
 </style>

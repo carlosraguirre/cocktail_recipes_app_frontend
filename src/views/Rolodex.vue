@@ -98,6 +98,7 @@
 <style>
 .app {
   font-family: "Roboto Mono", monospace;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -173,7 +174,7 @@ html {
   flex: 1;
 }
 .search input {
-  width: 50%;
+  width: 60%;
   font-size: 17px;
   font-family: "Roboto Mono", monospace;
 }
