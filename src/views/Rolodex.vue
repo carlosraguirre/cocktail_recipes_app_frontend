@@ -174,7 +174,7 @@ html {
   flex: 1;
 }
 .search input {
-  width: 60%;
+  width: 64%;
   font-size: 17px;
   font-family: "Roboto Mono", monospace;
 }
