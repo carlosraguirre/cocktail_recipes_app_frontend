@@ -117,7 +117,6 @@
 }
 .pre-formatted {
   white-space: pre-line;
-  
 }
 .modal {
   width: 500px;
@@ -179,7 +178,7 @@ html {
   font-family: "Roboto Mono", monospace;
 }
 #below-nav {
-  margin-top: 150px;
+  margin-top: 75px;
 }
 #add-button-position {
   margin: 20px;
