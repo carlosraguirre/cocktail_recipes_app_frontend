@@ -13,7 +13,7 @@
         <a href="/AdminLogin">Admin Login</a>
         </br>
         </br>
-        <a href="/">Logout</a>
+        <a href="/Logout">Logout</a>
 
       </ul>
     </div>
