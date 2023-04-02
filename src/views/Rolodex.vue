@@ -169,6 +169,11 @@ html {
   background: white;
   padding: 10px;
 }
+@media only screen and (max-width: 725px) {
+  #below-nav {
+    margin-top: 80px;
+  }
+}
 .search {
   flex: 1;
 }
@@ -178,7 +183,12 @@ html {
   font-family: "Roboto Mono", monospace;
 }
 #below-nav {
-  margin-top: 75px;
+  margin-top: 150px;
+}
+@media only screen and (max-width: 725px) {
+  #below-nav {
+    margin-top: 80px;
+  }
 }
 #add-button-position {
   margin: 20px;
