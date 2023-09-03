@@ -13,7 +13,7 @@
     </div>
     </br>
     <div id="below-nav">
-
+      <FilterSort />
     </div>
 
     <!-- Recipe Component -->
@@ -32,12 +32,14 @@
   import Recipe from '../components/Recipe.vue';
   import AddRecipe from '../components/AddRecipe.vue';
   import MenuButton from '../components/MenuButton.vue';
+  import FilterSort from '../components/FilterSort.vue';
 
   export default {
     components: {
       AddRecipe,
       Recipe,
-      MenuButton
+      MenuButton,
+      FilterSort
     },
     data: function () {
       return {
