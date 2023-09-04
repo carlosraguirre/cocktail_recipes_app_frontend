@@ -121,7 +121,7 @@
         return this.cocktails;
       },
       sortOldestFirst: function () {
-        this.cocktails.sort( (a, b) => {
+        this.cocktails.sort( (b, a) => {
           return new Date(b.created_at) - new Date(a.created_at);
         });
         return this.cocktails;
