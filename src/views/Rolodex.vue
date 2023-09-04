@@ -13,7 +13,8 @@
     </div>
     </br>
     <div id="below-nav">
-      <FilterSort />
+      <button v-on:click="sortDescending()">Sort Alpabetically A-Z</button>
+      <button v-on:click="sortAscending()">Sort Alpabetically Z-A</button>
     </div>
 
     <!-- Recipe Component -->
@@ -32,19 +33,20 @@
   import Recipe from '../components/Recipe.vue';
   import AddRecipe from '../components/AddRecipe.vue';
   import MenuButton from '../components/MenuButton.vue';
-  import FilterSort from '../components/FilterSort.vue';
+  // import FilterSort from '../components/FilterSort.vue';
 
   export default {
     components: {
       AddRecipe,
       Recipe,
       MenuButton,
-      FilterSort
+      // FilterSort
     },
     data: function () {
       return {
         cocktails: [],
         search: "",
+        oldestFirst: false,
       };
     },
     mounted: function () {
@@ -62,7 +64,7 @@
           cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase())
             || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase())
         );
-      }
+      },   
     },
     methods: {
       cocktailsIndex: function () {
@@ -93,6 +95,24 @@
           return false;
         }
       },
+      sortDescending: function () {
+        this.cocktails.sort(function(a, b) {
+          let x = a.cocktail_name.toLowerCase();
+          let y = b.cocktail_name.toLowerCase();
+          if (x < y) {return -1;}
+          if (x > y) {return 1;}
+          return 0;
+        });
+      },
+      sortAscending: function () {
+        this.cocktails.sort(function(a, b) {
+          let x = a.cocktail_name.toLowerCase();
+          let y = b.cocktail_name.toLowerCase();
+          if (x > y) {return -1;}
+          if (x < y) {return 1;}
+          return 0;
+        });
+      },      
     },
   };
 </script>
