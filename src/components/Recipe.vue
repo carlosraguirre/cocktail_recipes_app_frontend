@@ -12,6 +12,8 @@
         </br>
         <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Recipe</a>
         </br>
+        </br>
+        <div>{{ cocktail.created_at }}</div>
         <!-- <h4>Favorite</h4>
         <div class="pre-formatted">{{ cocktail.favorite }}</div> -->
       </div>

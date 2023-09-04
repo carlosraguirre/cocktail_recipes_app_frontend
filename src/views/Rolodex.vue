@@ -15,6 +15,7 @@
     <div id="below-nav">
       <button v-on:click="sortDescending()">Sort Alpabetically A-Z</button>
       <button v-on:click="sortAscending()">Sort Alpabetically Z-A</button>
+      <button v-on:click="sortNewestFirst()">Newest Cocktail First</button>
     </div>
 
     <!-- Recipe Component -->
@@ -46,7 +47,6 @@
       return {
         cocktails: [],
         search: "",
-        oldestFirst: false,
       };
     },
     mounted: function () {
@@ -112,6 +112,12 @@
           if (x < y) {return 1;}
           return 0;
         });
+      },
+      sortNewestFirst: function () {
+        this.cocktails.sort( (a, b) => {
+          return new Date(a.created_at) - new Date(b.created_at);
+        });
+        return this.cocktails;
       },      
     },
   };
