@@ -10,10 +10,8 @@
         <h4>Directions</h4>
         <div class="pre-formatted">{{ cocktail.direction }}</div>
         </br>
-        <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Recipe</a>
+        <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
         </br>
-        </br>
-        <div>{{ cocktail.created_at }}</div>
         <!-- <h4>Favorite</h4>
         <div class="pre-formatted">{{ cocktail.favorite }}</div> -->
       </div>
@@ -40,10 +38,10 @@
         <!-- Delete & Edit Buttons -->
         <div v-if="isLoggedIn()">
           <div id="button-container">
-            <button id="delete-button" v-on:click="destroyCocktail()">Delete Recipe</button> 
+            <button id="delete-button" v-on:click="destroyCocktail()">Delete</button> 
             &nbsp;&nbsp;&nbsp;
             <button id="edit-button" v-on:click="editModalOpen(cocktail)">
-              {{ isEditModalOpen ? "Close" : "Edit Recipe" }}
+              {{ isEditModalOpen ? "Close" : "Edit" }}
             </button>
           </div>
         </div>

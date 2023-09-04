@@ -12,11 +12,10 @@
     </br>
     <div class="login">
       <form v-on:submit.prevent="submit()">
-        <p id="login-header">Log in below, Carlos o7</p>
+        <p id="login-header">Admin login:</p>
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
-        </br>
         </br>
         <div class="form-titles">
           <div>

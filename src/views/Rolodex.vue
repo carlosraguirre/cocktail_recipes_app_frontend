@@ -3,7 +3,7 @@
     <div class="nav-bar">
       <MenuButton />
       <div class="search">
-        <input type="search" v-model="search" placeholder="Search Recipes">
+        <input type="search" v-model="search" placeholder="Search Cocktails">
       </div>
       <div v-if="isLoggedIn()">
         <div id="add-button-position">

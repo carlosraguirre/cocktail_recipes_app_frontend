@@ -9,7 +9,7 @@
       
       <ul id="menu">
         <a id="app-name" style="color: #902695" href="/">Cocktail Rolodex</a>
-        <p>Saved recipes: {{cocktails.length}}</p>
+        <p>Saved cocktails: {{cocktails.length}}</p>
         <a href="/AdminLogin">Admin Login</a>
         </br>
         </br>
