@@ -115,16 +115,26 @@
         });
       },
       sortNewestFirst: function () {
-        this.cocktails.sort( (a, b) => {
-          return new Date(a.created_at) - new Date(b.created_at);
+        this.cocktails.sort((a, b) => {
+          if(Date.parse(a.created_at) < Date.parse(b.created_at)) {
+            return 1
+          } else if (Date.parse(a.created_at) > Date.parse(b.created_at)) {
+            return -1
+          } else {
+            return 0
+          }
         });
-        return this.cocktails;
       },
       sortOldestFirst: function () {
-        this.cocktails.sort( (b, a) => {
-          return new Date(b.created_at) - new Date(a.created_at);
+        this.cocktails.sort((a, b) => {
+          if(Date.parse(a.created_at) > Date.parse(b.created_at)) {
+            return 1
+          } else if (Date.parse(a.created_at) < Date.parse(b.created_at)) {
+            return -1
+          } else {
+            return 0
+          }
         });
-        return this.cocktails;
       },
     },
   };
