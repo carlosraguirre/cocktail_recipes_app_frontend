@@ -17,18 +17,42 @@
         Sort by:
         <div id="sort-buttons-row">
           <div id="sort-button-wrapper">
-            <button id="sort-button" v-on:click="sortDescending()">A-Z</button>
+            <button
+              id="sort-button"
+              v-on:click="sortDescending(); colorToggle('A-Z');"
+              :class="{ activeSortButtonClass: activeSortButton === 'A-Z' }"
+            >
+              A-Z
+            </button>
           </div>
           <div id="sort-button-wrapper">
-            <button id="sort-button" v-on:click="sortAscending()">Z-A</button>
+            <button
+              id="sort-button"
+              v-on:click="sortAscending(); colorToggle('Z-A');"
+              :class="{ activeSortButtonClass: activeSortButton === 'Z-A' }"
+            >
+              Z-A
+            </button>
           </div>          
         </div>
         <div id="sort-buttons-row">
           <div id="sort-button-wrapper">
-            <button id="sort-button" v-on:click="sortNewestFirst()">Newest Cocktail First</button>
+            <button
+              id="sort-button"
+              v-on:click="sortNewestFirst(); colorToggle('Newest Cocktail First');"
+              :class="{ activeSortButtonClass: activeSortButton === 'Newest Cocktail First' }"
+            >
+              Newest Cocktail First
+            </button>
           </div>
           <div id="sort-button-wrapper">
-            <button id="sort-button" v-on:click="sortOldestFirst()">Oldest Cocktail First</button>
+            <button
+              id="sort-button"
+              v-on:click="sortOldestFirst(); colorToggle('Oldest Cocktail First');"
+              :class="{ activeSortButtonClass: activeSortButton === 'Oldest Cocktail First' }"
+            >
+              Oldest Cocktail First
+            </button>            
           </div>          
         </div>
       </div>
@@ -63,10 +87,12 @@
       return {
         cocktails: [],
         search: "",
+        activeSortButton: "",
       };
     },
     mounted: function () {
       this.cocktailsIndex();
+      this.colorToggle("Newest Cocktail First");
     },
     computed: {
       cocktailList() {
@@ -150,6 +176,9 @@
             return 0
           }
         });
+      },
+      colorToggle(id) {
+        this.activeSortButton = id;
       },
     },
   };
@@ -310,5 +339,8 @@ html {
   #sort-button {
     font-size: 12px;
   }
+}
+.activeSortButtonClass {
+  background-color: #902695 !important;
 }
 </style>
