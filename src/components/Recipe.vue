@@ -119,7 +119,7 @@
     font-size: 12px;
   }
   #button-container {
-    display: flex;
+    display: inline-block;
   }
 }
 #button-container {
@@ -139,6 +139,11 @@
   border-radius: 10px;
   font-weight: bold;
 }
+@media only screen and (max-width: 725px) {
+  #delete-button {
+    font-size: 12px;
+  }
+}
 #delete-button:hover {
   background-color: #e02c0c;
   color: white;
@@ -157,6 +162,11 @@
   margin: 4px 2px;
   border-radius: 10px;
   font-weight: bold;
+}
+@media only screen and (max-width: 725px) {
+  #edit-button {
+    font-size: 12px;
+  }
 }
 #edit-button:hover {
   background-color:#04AA6D;

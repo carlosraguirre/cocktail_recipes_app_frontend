@@ -101,6 +101,11 @@
   border-radius: 10px;
   font-weight: bold;
 }
+@media only screen and (max-width: 725px) {
+  #add-button {
+    font-size: 12px;
+  }
+}
 #add-button:hover {
   background-color: #dfe9df;
   color: black;

@@ -13,10 +13,25 @@
     </div>
     </br>
     <div id="below-nav">
-      <button v-on:click="sortDescending()">Sort Alpabetically A-Z</button>
-      <button v-on:click="sortAscending()">Sort Alpabetically Z-A</button>
-      <button v-on:click="sortNewestFirst()">Newest Cocktail First</button>
-      <button v-on:click="sortOldestFirst()">Oldest Cocktail First</button>
+      <div id="sort-area">
+        Sort by:
+        <div id="sort-buttons-row">
+          <div id="sort-button-wrapper">
+            <button id="sort-button" v-on:click="sortDescending()">A-Z</button>
+          </div>
+          <div id="sort-button-wrapper">
+            <button id="sort-button" v-on:click="sortAscending()">Z-A</button>
+          </div>          
+        </div>
+        <div id="sort-buttons-row">
+          <div id="sort-button-wrapper">
+            <button id="sort-button" v-on:click="sortNewestFirst()">Newest Cocktail First</button>
+          </div>
+          <div id="sort-button-wrapper">
+            <button id="sort-button" v-on:click="sortOldestFirst()">Oldest Cocktail First</button>
+          </div>          
+        </div>
+      </div>
     </div>
 
     <!-- Recipe Component -->
@@ -214,28 +229,86 @@ html {
   background: white;
   padding: 10px;
 }
-@media only screen and (max-width: 725px) {
-  #below-nav {
-    margin-top: 80px;
-  }
-}
 .search {
   flex: 1;
 }
 .search input {
   width: 65%;
   font-size: 17px;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto Mono", monospace;  
+}
+@media only screen and (max-width: 725px) {
+  .search input {
+    font-size: 12px;
+  }
 }
 #below-nav {
   margin-top: 150px;
+  margin-bottom: 30px;
 }
 @media only screen and (max-width: 725px) {
   #below-nav {
-    margin-top: 80px;
+    margin-top: 100px;
   }
 }
 #add-button-position {
   margin: 20px;
+}
+#sort-area {
+  width: 100%;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #2c3e50; */
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+#sort-buttons-row {
+  height: 50%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  /* display: inline-block; */
+}
+#sort-button-wrapper {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+#sort-button {
+  font-family: "Roboto Mono", monospace;
+  background-color: #078bbf;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  font-weight: bold;  
+  /* height: 33px;
+  width: 100%; */
+  /* margin: 5px; */
+}
+@media only screen and (max-width: 725px) {
+  #sort-area {
+    width: 100%;
+    font-size: 12px;
+  }
+  #sort-buttons-row {
+    display: inline-block;
+  }
+  #sort-button-wrapper {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+  #sort-button {
+    font-size: 12px;
+  }
 }
 </style>
