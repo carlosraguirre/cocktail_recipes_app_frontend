@@ -81,7 +81,6 @@
       AddRecipe,
       Recipe,
       MenuButton,
-      // FilterSort
     },
     data: function () {
       return {

@@ -13,8 +13,9 @@
         <a href="/AdminLogin">Admin Login</a>
         </br>
         </br>
-        <a href="/Logout">Logout</a>
-
+        <div v-if="isLoggedIn()">
+          <a href="/Logout">Logout</a>
+        </div>
       </ul>
     </div>
   </nav>
@@ -40,6 +41,13 @@
           this.cocktails = response.data;
         });
       },
+      isLoggedIn: function() {
+        if (localStorage.getItem("jwt")) {
+          return true;
+        } else {
+          return false;
+        }
+      },      
     },  
   };
 </script>
