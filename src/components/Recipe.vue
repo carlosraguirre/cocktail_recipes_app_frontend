@@ -127,7 +127,7 @@
 }
 #delete-button {
   font-family: "Roboto Mono", monospace;
-  background-color: #902695;
+  background-color: #4F7942;
   border: none;
   color: white;
   padding: 10px;
@@ -151,7 +151,7 @@
 }
 #edit-button {
   font-family: "Roboto Mono", monospace;
-  background-color: #902695;
+  background-color: #4F7942;
   border: none;
   color: white;
   padding: 10px;

@@ -8,7 +8,7 @@
       <span></span>
       
       <ul id="menu">
-        <a id="app-name" style="color: #902695" href="/">Cocktail Rolodex</a>
+        <a id="app-name" style="color: #4F7942" href="/">Cocktail Rolodex</a>
         <p>Saved cocktails: {{cocktails.length}}</p>
         <a href="/AdminLogin">Admin Login</a>
         </br>
@@ -47,7 +47,7 @@
 
 <style>
 #app-name {
-  color:#902695;
+  color:#4F7942;
   margin: auto;
   font-size: 28px;
 }
@@ -92,7 +92,7 @@
   margin-bottom: 5px;
   position: relative;
   
-  background: #902695;
+  background: #4F7942;
   border-radius: 3px;
   
   z-index: 1;

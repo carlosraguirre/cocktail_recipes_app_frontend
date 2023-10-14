@@ -126,7 +126,7 @@
   font-size: 45px;
 }
 #landing-app-name {
-  color:#902695;
+  color:#4F7942;
   margin: 20px;
   font-size: 60px;
 }
@@ -137,7 +137,7 @@
   font-size: 23px;
 }
 i.arrow-down{
-  color: #902695;
+  color: #4F7942;
   width:  0.55em;
   height:  0.9em;
   display:  inline-block;
@@ -155,7 +155,7 @@ i.arrow-down{
 }
 .submit-button {
   font-family: "Roboto Mono", monospace;
-  background-color: #902695;
+  background-color: #4F7942;
   border: none;
   color: white;
   padding: 10px;

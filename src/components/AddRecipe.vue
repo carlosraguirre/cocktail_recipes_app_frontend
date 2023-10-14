@@ -112,7 +112,7 @@
   font-weight: bold;
 }
 #add-button-modal{
-  background-color: #902695;
+  background-color: #4F7942;
   color: white;
   font-weight: bold;
   font-family: "Roboto Mono", monospace;

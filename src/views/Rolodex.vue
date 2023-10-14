@@ -341,6 +341,6 @@ html {
   }
 }
 .activeSortButtonClass {
-  background-color: #902695 !important;
+  background-color: #8A9A5B!important;
 }
 </style>
