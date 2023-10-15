@@ -63,6 +63,8 @@
       v-for="cocktail in cocktailList"
       @removeCocktail=deleteCocktail
       @editRecipe=editCocktail
+      :is-favorite="cocktail.favorite"
+      @toggle-favorite="toggleFavoriteStatus"      
       :cocktail="cocktail" 
       :key="cocktail.id"
     />
@@ -179,6 +181,12 @@
       colorToggle(id) {
         this.activeSortButton = id;
       },
+      toggleFavoriteStatus(cocktailId) {
+        const identifiedCocktail = this.cocktails.find(
+          (cocktail) => cocktail.id === cocktailId
+        );
+        identifiedCocktail.favorite = !identifiedCocktail.favorite;
+      },      
     },
   };
 </script>

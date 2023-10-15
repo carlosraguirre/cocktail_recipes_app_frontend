@@ -3,7 +3,7 @@
     <div class="box">
       <!-- Recipe Index -->
       <div id="original">
-        <h2>{{ cocktail.cocktail_name}}</h2>
+        <h2>{{ cocktail.cocktail_name }} {{ isFavorite ? '(Favorite)' : '' }}</h2>
         <h4>Ingredients</h4>
         <div class="pre-formatted">{{ cocktail.ingredient }}</div>
         </br>
@@ -17,6 +17,10 @@
       </div>
       </br>
       </br>
+
+      <div>
+        <button @click="toggleFavorite">Choose Favorite</button>
+      </div>
 
       <!-- Edit Recipe -->
       <div>
@@ -54,8 +58,18 @@
   import axios from "axios";
 
   export default {
-    emits: ['removeCocktail', 'editRecipe'],
-    props: {cocktail:{type: Object, required: true}},
+    emits: ['removeCocktail', 'editRecipe', 'toggle-favorite'],
+    props: {
+      cocktail: {
+        type: Object,
+        required: true
+      },
+      isFavorite: {
+        type: Boolean,
+        required: false,
+        default: false,
+      },
+    },
 
     data: function () {
       return {
@@ -90,6 +104,9 @@
         } else {
           return false;
         }
+      },
+      toggleFavorite() {
+        this.$emit('toggle-favorite', this.cocktail.id);
       },
     },
   }
