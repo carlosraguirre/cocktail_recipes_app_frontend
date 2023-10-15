@@ -18,10 +18,6 @@
       </br>
       </br>
 
-      <div>
-        <button @click="toggleFavorite">Choose Favorite</button>
-      </div>
-
       <!-- Edit Recipe -->
       <div>
         <transition name="modal">
@@ -39,7 +35,12 @@
           </div>
         </transition>
 
-        <!-- Delete & Edit Buttons -->
+        <!-- Favorite, Delete & Edit Buttons -->
+        <div v-if="isLoggedIn()">
+          <div id="button-container">
+            <button id="favorite-button" v-on:click="toggleFavorite">Choose Favorite</button>            
+          </div>
+        </div>
         <div v-if="isLoggedIn()">
           <div id="button-container">
             <button id="delete-button" v-on:click="destroyCocktail()">Delete</button> 
@@ -142,6 +143,30 @@
 #button-container {
   text-align: center;
 }
+#favorite-button {
+  font-family: "Roboto Mono", monospace;
+  background-color: #078bbf;
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+@media only screen and (max-width: 725px) {
+  #favorite-button {
+    font-size: 12px;
+  }
+}
+#favorite-button:hover {
+  background-color: #04AA6D;
+  color: white;
+  font-weight: bold;
+}
 #delete-button {
   font-family: "Roboto Mono", monospace;
   background-color: #4F7942;
@@ -188,19 +213,6 @@
 #edit-button:hover {
   background-color:#04AA6D;
   color: white;
-  font-weight: bold;
-}
-#favorite-button {
-  font-family: "Roboto Mono", monospace;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 10px;
   font-weight: bold;
 }
 </style>
