@@ -94,6 +94,7 @@
     mounted: function () {
       this.cocktailsIndex();
       this.colorToggle("Newest Cocktail First");
+      // this.toggleFavoriteStatus("Choose Favorite");
     },
     computed: {
       cocktailList() {

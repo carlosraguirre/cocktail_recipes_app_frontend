@@ -12,8 +12,8 @@
         </br>
         <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
         </br>
-        <!-- <h4>Favorite</h4>
-        <div class="pre-formatted">{{ cocktail.favorite }}</div> -->
+        <h4>Favorite Test</h4>
+        <div class="pre-formatted">{{ cocktail.favorite }}</div>
       </div>
       </br>
       </br>
@@ -38,7 +38,9 @@
         <!-- Favorite, Delete & Edit Buttons -->
         <div v-if="isLoggedIn()">
           <div id="button-container">
-            <button id="favorite-button" v-on:click="toggleFavorite">Choose Favorite</button>            
+            <button id="favorite-button" v-on:click="toggleFavorite">
+              {{ favorited? "Remove Favorite" : "Choose Favorite"  }}
+            </button>            
           </div>
         </div>
         <div v-if="isLoggedIn()">
@@ -76,6 +78,7 @@
       return {
         editCocktailParams: {},
         isEditModalOpen: false,
+        favorited: false,
       };
     },
   
@@ -108,6 +111,7 @@
       },
       toggleFavorite() {
         this.$emit('toggle-favorite', this.cocktail.id);
+        this.favorited = true;
       },
     },
   }
