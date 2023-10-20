@@ -299,7 +299,7 @@ html {
   /* background-color: #2c3e50; */
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 16px;
 }
 #sort-buttons-row {
   height: 50%;

@@ -28,7 +28,7 @@
                 <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
                 <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
                 <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-                <!-- <p><input type="text" v-model="editCocktailParams.favorite" placeholder="Favorite?"></p> -->
+                <p><input type="text" v-model="editCocktailParams.favorite" placeholder="Favorite?"></p>
                 <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
@@ -37,11 +37,29 @@
 
         <!-- Favorite, Delete & Edit Buttons -->
         <div v-if="isLoggedIn()">
+
+          <!-- save for component -->
+          <!-- <h4 v-if="favorited === false || cocktail.favorite.length === 0">
+            <button id="favorite-button" v-on:click="addtoFavorites">
+              Add to Favorites
+            </button>
+          </h4>
+          <h4 v-if="favorited === true">
+            <button id="favorite-button" v-on:click="removeFavorite()">
+              Remove from Favorites
+            </button>
+          </h4> -->
+
+
+          <!-- previous favoirte button. leave uncommented until new component made -->
           <div id="button-container">
             <button id="favorite-button" v-on:click="toggleFavorite">
-              {{ favorited? "Remove Favorite" : "Choose Favorite"  }}
+              Favorite
+              <!-- {{ favorited? "Remove Favorite" : "Choose Favorite" }} -->
             </button>            
           </div>
+
+
         </div>
         <div v-if="isLoggedIn()">
           <div id="button-container">
@@ -61,14 +79,14 @@
   import axios from "axios";
 
   export default {
-    emits: ['removeCocktail', 'editRecipe', 'toggle-favorite'],
+    emits: ['removeCocktail', 'editRecipe'],
     props: {
       cocktail: {
         type: Object,
         required: true
       },
       isFavorite: {
-        type: Boolean,
+        // type: Boolean,
         required: false,
         default: false,
       },
@@ -78,6 +96,8 @@
       return {
         editCocktailParams: {},
         isEditModalOpen: false,
+        // favorite: Boolean,
+        favorite: "",
         favorited: false,
       };
     },
