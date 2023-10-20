@@ -3,7 +3,7 @@
     <div class="box">
       <!-- Recipe Index -->
       <div id="original">
-        <h2>{{ cocktail.cocktail_name }} {{ isFavorite ? '(Favorite)' : '' }}</h2>
+        <h2>{{ cocktail.cocktail_name }} {{ favorited ? '(Favorite)' : '' }}</h2>
         <h4>Ingredients</h4>
         <div class="pre-formatted">{{ cocktail.ingredient }}</div>
         </br>
@@ -13,7 +13,7 @@
         <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
         </br>
         <h4>Favorite Test</h4>
-        <div class="pre-formatted">{{ cocktail.favorite }}</div>
+        <div class="pre-formatted">{{ favorite }}</div>
       </div>
       </br>
       </br>
@@ -37,9 +37,7 @@
 
         <!-- Favorite, Delete & Edit Buttons -->
         <div v-if="isLoggedIn()">
-
-          <!-- save for component -->
-          <!-- <h4 v-if="favorited === false || cocktail.favorite.length === 0">
+          <h4 v-if="favorited === false">
             <button id="favorite-button" v-on:click="addtoFavorites">
               Add to Favorites
             </button>
@@ -48,16 +46,16 @@
             <button id="favorite-button" v-on:click="removeFavorite()">
               Remove from Favorites
             </button>
-          </h4> -->
+          </h4>
 
 
-          <!-- previous favoirte button. leave uncommented until new component made -->
-          <div id="button-container">
+          <!-- previous favoirte button -->
+          <!-- <div id="button-container">
             <button id="favorite-button" v-on:click="toggleFavorite">
               Favorite
-              <!-- {{ favorited? "Remove Favorite" : "Choose Favorite" }} -->
+              {{ favorited? "Remove Favorite" : "Choose Favorite" }}
             </button>            
-          </div>
+          </div> -->
 
 
         </div>
@@ -85,11 +83,11 @@
         type: Object,
         required: true
       },
-      isFavorite: {
-        // type: Boolean,
-        required: false,
-        default: false,
-      },
+      // isFavorite: {
+      //   type: Boolean,
+      //   required: false,
+      //   default: false,
+      // },
     },
 
     data: function () {
@@ -97,7 +95,9 @@
         editCocktailParams: {},
         isEditModalOpen: false,
         // favorite: Boolean,
-        favorite: "",
+        // favorite: "",
+        favorite: [],
+        favoriteId: 0,
         favorited: false,
       };
     },
@@ -129,10 +129,16 @@
           return false;
         }
       },
-      toggleFavorite() {
-        this.$emit('toggle-favorite', this.cocktail.id);
+      addtoFavorites: function() {
+        axios.post("/favorites", {
+          user_id: localStorage.user_id,
+        })
         this.favorited = true;
       },
+      // toggleFavorite() {
+      //   this.$emit('toggle-favorite', this.cocktail.id);
+      //   this.favorited = true;
+      // },
     },
   }
 
