@@ -10,7 +10,9 @@
         <h4>Directions</h4>
         <div class="pre-formatted">{{ cocktail.direction }}</div>
         <br />
-        <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
+        <h4>
+          <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
+        </h4>
         <br />
         <h4>Favorite Test</h4>
         <div class="pre-formatted">{{ favorite.cocktail_user_id }}</div>
