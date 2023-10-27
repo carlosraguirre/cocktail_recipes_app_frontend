@@ -6,17 +6,21 @@
         <h2>{{ cocktail.cocktail_name }} {{ favorited ? '(Favorite)' : '' }}</h2>
         <h4>Ingredients</h4>
         <div class="pre-formatted">{{ cocktail.ingredient }}</div>
-        </br>
+        <br />
         <h4>Directions</h4>
         <div class="pre-formatted">{{ cocktail.direction }}</div>
-        </br>
+        <br />
         <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
-        </br>
+        <br />
         <h4>Favorite Test</h4>
-        <div class="pre-formatted">{{ favorite }}</div>
+        <div class="pre-formatted">{{ favorite.cocktail_user_id }}</div>
+        <div>
+          <input type="text" v-model="editFavoriteParams.is_favorite" placeholder="Favorite?">
+          <button id="edit-button" v-on:click="addtoFavorites()">Save changes</button>
+        </div>
       </div>
-      </br>
-      </br>
+      <br />
+      <br />
 
       <!-- Edit Recipe -->
       <div>
@@ -28,7 +32,7 @@
                 <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
                 <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
                 <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-                <p><input type="text" v-model="editCocktailParams.favorite" placeholder="Favorite?"></p>
+                <!-- <p><input type="text" v-model="editFavoriteParams.is_favorite" placeholder="Favorite?"></p> -->
                 <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
@@ -96,6 +100,7 @@
         isEditModalOpen: false,
         // favorite: Boolean,
         // favorite: "",
+        editFavoriteParams: {},
         favorite: [],
         favoriteId: 0,
         favorited: false,
@@ -129,11 +134,28 @@
           return false;
         }
       },
+      favoritesIndex: function() {
+        axios.get("/favorites").then((response) => {
+          this.favorites = response.data;
+        });
+      },
       addtoFavorites: function() {
-        axios.post("/favorites", {
-          user_id: localStorage.user_id,
-        })
-        this.favorited = true;
+        axios.patch(`/favorites/${this.editFavoriteParams.id}`, this.editFavoriteParams).then(response => {
+          console.log("favorites update", response.data);
+          // this.is_favorite = "yes";
+        });
+      },
+      // addtoFavorites: function() {
+      //   axios.post('/favorites', {
+      //     user_id: localStorage.user_id,
+      //   })
+      //   this.favorited = true;
+      // },
+      removeFavorite: function() {
+        axios.delete(`/favorites/${this.favorite.id}`).then((response) => {
+          console.log(this.cocktail_name);
+          this.favorited = false;
+        });
       },
       // toggleFavorite() {
       //   this.$emit('toggle-favorite', this.cocktail.id);

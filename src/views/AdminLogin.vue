@@ -2,21 +2,21 @@
   <div id="landing-page">
     <MenuButton />    
     <div>
-      </br>
+      <br />
       <h1 id="landing-title">Welcome back to your</h1>
       <h1 id="landing-app-name">Cocktail Rolodex</h1>
     </div>
-    </br>
-    </br>
-    </br>
-    </br>
+    <br />
+    <br />
+    <br />
+    <br />
     <div class="login">
       <form v-on:submit.prevent="submit()">
         <p id="login-header">Admin login:</p>
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
-        </br>
+        <br />
         <div class="form-titles">
           <div>
             <label>Email: </label>

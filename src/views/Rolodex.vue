@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    </br>
+    <br />
     <div id="below-nav">
       <div id="sort-area">
         Sort by:
