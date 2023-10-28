@@ -3,7 +3,7 @@
     <div class="box">
       <!-- Recipe Index -->
       <div id="original">
-        <h2>{{ cocktail.cocktail_name }} {{ favorited ? '(Favorite)' : '' }}</h2>
+        <h2>{{ cocktail.cocktail_name }} {{ cocktail.favorite ? '(Favorite)' : '' }}</h2>
         <h4>Ingredients</h4>
         <div class="pre-formatted">{{ cocktail.ingredient }}</div>
         <br />
@@ -15,11 +15,11 @@
         </h4>
         <br />
         <h4>Favorite Test</h4>
-        <div class="pre-formatted">{{ favorite.cocktail_user_id }}</div>
-        <div>
+        <div class="pre-formatted">{{ cocktail.favorite }}</div>
+        <!-- <div>
           <input type="text" v-model="editFavoriteParams.is_favorite" placeholder="Favorite?">
           <button id="edit-button" v-on:click="addtoFavorites()">Save changes</button>
-        </div>
+        </div> -->
       </div>
       <br />
       <br />
@@ -34,7 +34,7 @@
                 <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
                 <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
                 <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-                <!-- <p><input type="text" v-model="editFavoriteParams.is_favorite" placeholder="Favorite?"></p> -->
+                <!-- <p><input type="text" v-model="editFavoriteParams.favorite" placeholder="Favorite?"></p> -->
                 <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
@@ -43,12 +43,12 @@
 
         <!-- Favorite, Delete & Edit Buttons -->
         <div v-if="isLoggedIn()">
-          <h4 v-if="favorited === false">
+          <h4 v-if="cocktail.favorite === false">
             <button id="favorite-button" v-on:click="addtoFavorites">
               Add to Favorites
             </button>
           </h4>
-          <h4 v-if="favorited === true">
+          <h4 v-if="cocktail.favorite === true">
             <button id="favorite-button" v-on:click="removeFavorite()">
               Remove from Favorites
             </button>
@@ -100,12 +100,8 @@
       return {
         editCocktailParams: {},
         isEditModalOpen: false,
-        // favorite: Boolean,
-        // favorite: "",
-        editFavoriteParams: {},
+        editFavoriteParams: true || false,
         favorite: [],
-        favoriteId: 0,
-        favorited: false,
       };
     },
   
@@ -136,15 +132,10 @@
           return false;
         }
       },
-      favoritesIndex: function() {
-        axios.get("/favorites").then((response) => {
-          this.favorites = response.data;
-        });
-      },
       addtoFavorites: function() {
-        axios.patch(`/favorites/${this.editFavoriteParams.id}`, this.editFavoriteParams).then(response => {
+        axios.patch(`/cocktails/${this.editFavoriteParams.id}`, this.editFavoriteParams).then(response => {
           console.log("favorites update", response.data);
-          // this.is_favorite = "yes";
+          this.favorite = true;
         });
       },
       // addtoFavorites: function() {
@@ -156,7 +147,7 @@
       removeFavorite: function() {
         axios.delete(`/favorites/${this.favorite.id}`).then((response) => {
           console.log(this.cocktail_name);
-          this.favorited = false;
+          this.favorite = false;
         });
       },
       // toggleFavorite() {
@@ -217,13 +208,13 @@
   }
 }
 #favorite-button:hover {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #dfe9df;
+  color: black;
   font-weight: bold;
 }
 #delete-button {
   font-family: "Roboto Mono", monospace;
-  background-color: #4F7942;
+  background-color: #078bbf;
   border: none;
   color: white;
   padding: 10px;
@@ -247,7 +238,7 @@
 }
 #edit-button {
   font-family: "Roboto Mono", monospace;
-  background-color: #4F7942;
+  background-color: #078bbf;
   border: none;
   color: white;
   padding: 10px;
@@ -265,8 +256,8 @@
   }
 }
 #edit-button:hover {
-  background-color:#04AA6D;
-  color: white;
+  background-color:#dfe9df;
+  color: black;
   font-weight: bold;
 }
 </style>

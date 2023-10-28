@@ -8,11 +8,11 @@
       <span></span>
       
       <ul id="menu">
-        <a id="app-name" style="color: #4F7942" href="/">Cocktail Rolodex</a>
+        <a id="app-name" style="color: #078bbf; font-weight: bold" href="/">Cocktail Rolodex</a>
         <p>Saved cocktails: {{cocktails.length}}</p>
         <a href="/AdminLogin">Admin Login</a>
-        </br>
-        </br>
+        <br />
+        <br />
         <div v-if="isLoggedIn()">
           <a href="/Logout">Logout</a>
         </div>
@@ -55,7 +55,7 @@
 
 <style>
 #app-name {
-  color:#4F7942;
+  color:#078bbf;
   margin: auto;
   font-size: 28px;
 }
@@ -100,7 +100,7 @@
   margin-bottom: 5px;
   position: relative;
   
-  background: #4F7942;
+  background: #078bbf;
   border-radius: 3px;
   
   z-index: 1;
