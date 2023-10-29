@@ -38,7 +38,6 @@
           ingredient: this.newCocktailParams.ingredient,
           direction: this.newCocktailParams.direction,
           recipe_link: this.newCocktailParams.recipe_link,
-          favorite: this.newCocktailParams.favorite,
         };
         axios.post("/cocktails", cocktailParams).then((response) => {
           // console.log(response.data);
