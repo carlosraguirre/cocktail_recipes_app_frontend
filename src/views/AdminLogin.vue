@@ -126,7 +126,7 @@
   font-size: 45px;
 }
 #landing-app-name {
-  color:#4F7942;
+  color:#078bbf;
   margin: 20px;
   font-size: 60px;
 }
@@ -137,7 +137,7 @@
   font-size: 23px;
 }
 i.arrow-down{
-  color: #4F7942;
+  color: #078bbf;
   width:  0.55em;
   height:  0.9em;
   display:  inline-block;
@@ -155,7 +155,7 @@ i.arrow-down{
 }
 .submit-button {
   font-family: "Roboto Mono", monospace;
-  background-color: #4F7942;
+  background-color: #078bbf;
   border: none;
   color: white;
   padding: 10px;
@@ -168,8 +168,8 @@ i.arrow-down{
   font-weight: bold;
 }
 .submit-button:hover {
-  background-color:#04AA6D;
-  color: white;
+  background-color:#dfe9df;
+  color: black;
   font-weight: bold;
 }
 .form-titles {
