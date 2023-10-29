@@ -16,10 +16,6 @@
         <br />
         <h4>Favorite Test</h4>
         <div class="pre-formatted">{{ cocktail.favorite }}</div>
-        <!-- <div>
-          <input type="text" v-model="editFavoriteParams.is_favorite" placeholder="Favorite?">
-          <button id="edit-button" v-on:click="addtoFavorites()">Save changes</button>
-        </div> -->
       </div>
       <br />
       <br />
@@ -34,7 +30,6 @@
                 <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
                 <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
                 <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-                <!-- <p><input type="text" v-model="editFavoriteParams.favorite" placeholder="Favorite?"></p> -->
                 <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
@@ -44,26 +39,15 @@
         <!-- Favorite, Delete & Edit Buttons -->
         <div v-if="isLoggedIn()">
           <h4 v-if="cocktail.favorite === false">
-            <button id="favorite-button" v-on:click="addtoFavorites">
+            <button id="favorite-button" v-on:click.prevent="addtoFavorites()">
               Add to Favorites
             </button>
           </h4>
           <h4 v-if="cocktail.favorite === true">
-            <button id="favorite-button" v-on:click="removeFavorite()">
+            <button id="favorite-button" v-on:click.prevent="removeFavorite()">
               Remove from Favorites
             </button>
           </h4>
-
-
-          <!-- previous favoirte button -->
-          <!-- <div id="button-container">
-            <button id="favorite-button" v-on:click="toggleFavorite">
-              Favorite
-              {{ favorited? "Remove Favorite" : "Choose Favorite" }}
-            </button>            
-          </div> -->
-
-
         </div>
         <div v-if="isLoggedIn()">
           <div id="button-container">
@@ -89,19 +73,13 @@
         type: Object,
         required: true
       },
-      // isFavorite: {
-      //   type: Boolean,
-      //   required: false,
-      //   default: false,
-      // },
     },
 
     data: function () {
       return {
         editCocktailParams: {},
         isEditModalOpen: false,
-        editFavoriteParams: true || false,
-        favorite: [],
+        toggleFavorite: true,
       };
     },
   
@@ -133,27 +111,17 @@
         }
       },
       addtoFavorites: function() {
-        axios.patch(`/cocktails/${this.editFavoriteParams.id}`, this.editFavoriteParams).then(response => {
+        axios.patch(`/cocktails/${this.cocktail.id}`, {favorite: true}).then(response => {
           console.log("favorites update", response.data);
-          this.favorite = true;
+          location.reload();
         });
       },
-      // addtoFavorites: function() {
-      //   axios.post('/favorites', {
-      //     user_id: localStorage.user_id,
-      //   })
-      //   this.favorited = true;
-      // },
       removeFavorite: function() {
-        axios.delete(`/favorites/${this.favorite.id}`).then((response) => {
-          console.log(this.cocktail_name);
-          this.favorite = false;
+        axios.patch(`/cocktails/${this.cocktail.id}`, {favorite: false}).then(response => {
+          console.log("favorites update", response.data);
+          location.reload();
         });
       },
-      // toggleFavorite() {
-      //   this.$emit('toggle-favorite', this.cocktail.id);
-      //   this.favorited = true;
-      // },
     },
   }
 
