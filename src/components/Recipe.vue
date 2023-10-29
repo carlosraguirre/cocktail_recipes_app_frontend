@@ -39,12 +39,12 @@
         <!-- Favorite, Delete & Edit Buttons -->
         <div v-if="isLoggedIn()">
           <h4 v-if="cocktail.favorite === false">
-            <button id="favorite-button" v-on:click.prevent="addtoFavorites()">
+            <button id="favorite-button" v-on:click="addtoFavorites()">
               Add to Favorites
             </button>
           </h4>
           <h4 v-if="cocktail.favorite === true">
-            <button id="favorite-button" v-on:click.prevent="removeFavorite()">
+            <button id="favorite-button" v-on:click="removeFavorite()">
               Remove from Favorites
             </button>
           </h4>
