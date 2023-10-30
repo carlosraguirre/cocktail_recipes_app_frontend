@@ -38,7 +38,7 @@
 
         <!-- Favorite, Delete & Edit Buttons -->
         <div v-if="isLoggedIn()">
-          <h4 v-if="cocktail.favorite === false || '' ">
+          <h4 v-if="cocktail.favorite === false">
             <button id="favorite-button" v-on:click="addtoFavorites()">
               Add to Favorites
             </button>
@@ -79,7 +79,6 @@
       return {
         editCocktailParams: {},
         isEditModalOpen: false,
-        toggleFavorite: true,
       };
     },
   

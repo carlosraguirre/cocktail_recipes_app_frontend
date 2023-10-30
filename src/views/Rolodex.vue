@@ -62,9 +62,7 @@
     <Recipe
       v-for="cocktail in cocktailList"
       @removeCocktail=deleteCocktail
-      @editRecipe=editCocktail
-      :is-favorite="cocktail.favorite"
-      @toggle-favorite="toggleFavoriteStatus"      
+      @editRecipe=editCocktail 
       :cocktail="cocktail" 
       :key="cocktail.id"
     />
@@ -94,7 +92,6 @@
     mounted: function () {
       this.cocktailsIndex();
       this.colorToggle("Newest Cocktail First");
-      // this.toggleFavoriteStatus("Choose Favorite");
     },
     computed: {
       cocktailList() {
@@ -181,13 +178,7 @@
       },
       colorToggle(id) {
         this.activeSortButton = id;
-      },
-      toggleFavoriteStatus(cocktailId) {
-        const identifiedCocktail = this.cocktails.find(
-          (cocktail) => cocktail.id === cocktailId
-        );
-        identifiedCocktail.favorite = !identifiedCocktail.favorite;
-      },      
+      },    
     },
   };
 </script>
