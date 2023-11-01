@@ -13,12 +13,12 @@
         <h4>
           <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
         </h4>
-        <br />
+        <!-- <br />
         <h4>Favorite Test</h4>
-        <div class="pre-formatted">{{ cocktail.favorite }}</div>
+        <div class="pre-formatted">{{ cocktail.favorite }}</div> -->
       </div>
-      <br />
-      <br />
+      <!-- <br /> -->
+      <!-- <br /> -->
 
       <!-- Edit Recipe -->
       <div>
