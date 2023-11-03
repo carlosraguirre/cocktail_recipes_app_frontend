@@ -33,7 +33,16 @@
             >
               Z-A
             </button>
-          </div>          
+          </div>
+          <div id="sort-button-wrapper">
+            <button
+              id="sort-button"
+              v-on:click="sortFavorites(); colorToggle('Favorites');"
+              :class="{ activeSortButtonClass: activeSortButton === 'Favorites' }"
+            >
+              Favorites
+            </button>
+          </div>                 
         </div>
         <div id="sort-buttons-row">
           <div id="sort-button-wrapper">
@@ -91,7 +100,7 @@
     },
     mounted: function () {
       this.cocktailsIndex();
-      this.colorToggle("Newest Cocktail First");
+      this.colorToggle("Favorites");
     },
     computed: {
       cocktailList() {
@@ -105,7 +114,7 @@
           cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase())
             || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase())
         );
-      },   
+      },
     },
     methods: {
       cocktailsIndex: function () {
@@ -176,6 +185,17 @@
           }
         });
       },
+      sortFavorites: function() {
+        this.cocktails.sort((a, b) => {
+          if (a. favorite && -!b.favorite) {
+            return -1
+          } else if (!a.favorite && b.favorite) {
+            return 1
+          } else {
+            return 0
+          }
+        });
+      },      
       colorToggle(id) {
         this.activeSortButton = id;
       },    
