@@ -69,7 +69,7 @@
 
     <!-- Recipe Component -->
     <Recipe
-      v-for="cocktail in cocktailList"
+      v-for="cocktail in filteredCocktails"
       @removeCocktail=deleteCocktail
       @editRecipe=editCocktail 
       :cocktail="cocktail" 
@@ -103,17 +103,14 @@
       this.colorToggle("Favorites");
     },
     computed: {
-      cocktailList() {
-        return this.cocktails.filter(cocktail => 
-          cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase())
-            || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase())
-        );
-      },
-      filterCocktails() {
-        return this.cocktails.filter(cocktail =>
-          cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase())
-            || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase())
-        );
+      filteredCocktails() {
+        let filteredCocktails = this.cocktails.filter((cocktail) => {
+          return cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase()) || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase());
+        })
+        let orderedCocktails = filteredCocktails.sort((a, b) => {
+          return b.cocktail_name - a.cocktail_name;
+        })
+        return orderedCocktails;
       },
     },
     methods: {
