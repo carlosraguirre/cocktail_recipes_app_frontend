@@ -302,8 +302,8 @@ html {
   }
 }
 #below-nav {
-  margin-top: 150px;
-  margin-bottom: 30px;
+  margin-top: 125px;
+  margin-bottom: 50px;
 }
 @media only screen and (max-width: 725px) {
   #below-nav {
