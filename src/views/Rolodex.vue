@@ -13,52 +13,57 @@
     </div>
     <br />
     <div id="below-nav">
-      <div id="sort-area">
+      <div id="filter-and-sort-area">
+        <div id="filter-and-sort-button-wrapper">
+          <label><input filter-and-sort-button type="radio" v-model="selectedFilter" value="All" /> Show All</label>
+          <label><input type="radio" v-model="selectedFilter" value="true" /> Show Favorites</label>
+        </div>
+        <br />
         Sort by:
-        <div id="sort-buttons-row">
-          <div id="sort-button-wrapper">
+        <div id="filter-and-sort-buttons-row">
+          <div id="filter-and-sort-button-wrapper">
             <button
-              id="sort-button"
+              id="filter-and-sort-button"
               v-on:click="sortDescending(); colorToggle('A-Z');"
-              :class="{ activeSortButtonClass: activeSortButton === 'A-Z' }"
+              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'A-Z' }"
             >
               A-Z
             </button>
           </div>
-          <div id="sort-button-wrapper">
+          <div id="filter-and-sort-button-wrapper">
             <button
-              id="sort-button"
+              id="filter-and-sort-button"
               v-on:click="sortAscending(); colorToggle('Z-A');"
-              :class="{ activeSortButtonClass: activeSortButton === 'Z-A' }"
+              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'Z-A' }"
             >
               Z-A
             </button>
           </div>
-          <div id="sort-button-wrapper">
+          <div id="filter-and-sort-button-wrapper">
             <button
-              id="sort-button"
+              id="filter-and-sort-button"
               v-on:click="sortFavorites(); colorToggle('Favorites');"
-              :class="{ activeSortButtonClass: activeSortButton === 'Favorites' }"
+              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'Favorites' }"
             >
               Favorites
             </button>
           </div>                 
         </div>
-        <div id="sort-buttons-row">
-          <div id="sort-button-wrapper">
+        <div id="filter-and-sort-buttons-row">
+          <div id="filter-and-sort-button-wrapper">
             <button
-              id="sort-button"
+              id="filter-and-sort-button"
               v-on:click="sortNewestFirst(); colorToggle('Newest Cocktail First');"
-              :class="{ activeSortButtonClass: activeSortButton === 'Newest Cocktail First' }"
+              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'Newest Cocktail First' }"
             >
               Newest Cocktail First
             </button>
           </div>
-          <div id="sort-button-wrapper">
+          <div id="filter-and-sort-button-wrapper">
             <button
-              id="sort-button"
+              id="filter-and-sort-button"
               v-on:click="sortOldestFirst(); colorToggle('Oldest Cocktail First');"
-              :class="{ activeSortButtonClass: activeSortButton === 'Oldest Cocktail First' }"
+              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'Oldest Cocktail First' }"
             >
               Oldest Cocktail First
             </button>            
@@ -95,7 +100,9 @@
       return {
         cocktails: [],
         search: "",
-        activeSortButton: "",
+        activeFilterAndSortButton: "",
+        // selectedFavorite: "All",
+        selectedFilter: "All",
       };
     },
     mounted: function () {
@@ -104,13 +111,40 @@
     },
     computed: {
       filteredCocktails() {
-        let filteredCocktails = this.cocktails.filter((cocktail) => {
-          return cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase()) || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase());
-        })
-        let orderedCocktails = filteredCocktails.sort((a, b) => {
-          return b.cocktail_name - a.cocktail_name;
-        })
-        return orderedCocktails;
+        return (
+          this.cocktails
+            // search filter
+            .filter(cocktail => {
+              return cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase()) || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase());
+            })
+            // favorite filter
+            .filter(cocktail => {
+              if (this.selectedFilter === "" || this.selectedFilter === "All") {
+                return this.cocktails
+              } else {
+                return cocktail.favorite === true
+              }
+            })
+        )
+
+
+
+
+        // var isFavorite = this.selectedFavorite;
+        // if(isFavorite === "All") {
+        //   return this.cocktails;
+        // } else {
+        //   return this.cocktails.filter(function(cocktail) {
+        //     return cocktail.favorite === true;
+        //   });
+        // }
+        // let filteredCocktails = this.cocktails.filter((cocktail) => {
+        //   return cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase()) || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase());
+        // })
+        // let orderedCocktails = filteredCocktails.sort((a, b) => {
+        //   return b.cocktail_name - a.cocktail_name;
+        // })
+        // return orderedCocktails;
       },
     },
     methods: {
@@ -194,7 +228,7 @@
         });
       },      
       colorToggle(id) {
-        this.activeSortButton = id;
+        this.activeFilterAndSortButton = id;
       },    
     },
   };
@@ -299,7 +333,7 @@ html {
 #add-button-position {
   margin: 20px;
 }
-#sort-area {
+#filter-and-sort-area {
   width: 100%;
   height: 75px;
   align-items: center;
@@ -309,21 +343,21 @@ html {
   padding: 0;
   font-size: 16px;
 }
-#sort-buttons-row {
+#filter-and-sort-buttons-row {
   height: 50%;
   width: 100%;
   margin: 0;
   padding: 0;
   /* display: inline-block; */
 }
-#sort-button-wrapper {
+#filter-and-sort-button-wrapper {
   display: inline-block;
   margin: 0;
   padding: 0;
   margin-left: 2px;
   margin-right: 2px;
 }
-#sort-button {
+#filter-and-sort-button {
   font-family: "Roboto Mono", monospace;
   background-color: #078bbf;
   border: none;
@@ -341,22 +375,22 @@ html {
   /* margin: 5px; */
 }
 @media only screen and (max-width: 725px) {
-  #sort-area {
+  #filter-and-sort-area {
     width: 100%;
     font-size: 12px;
   }
-  #sort-buttons-row {
+  #filter-and-sort-buttons-row {
     display: inline-block;
   }
-  #sort-button-wrapper {
+  #filter-and-sort-button-wrapper {
     margin-left: 1px;
     margin-right: 1px;
   }
-  #sort-button {
+  #filter-and-sort-button {
     font-size: 12px;
   }
 }
-.activeSortButtonClass {
+.activeFilterAndSortButtonClass {
   background-color: #dfe9df!important;
   color: black!important;
 }
