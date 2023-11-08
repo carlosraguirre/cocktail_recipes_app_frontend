@@ -39,7 +39,7 @@
               Z-A
             </button>
           </div>
-          <div id="filter-and-sort-button-wrapper">
+          <!-- <div id="filter-and-sort-button-wrapper">
             <button
               id="filter-and-sort-button"
               v-on:click="sortFavorites(); colorToggle('Favorites');"
@@ -47,7 +47,7 @@
             >
               Favorites
             </button>
-          </div>                 
+          </div> -->
         </div>
         <div id="filter-and-sort-buttons-row">
           <div id="filter-and-sort-button-wrapper">
@@ -101,7 +101,6 @@
         cocktails: [],
         search: "",
         activeFilterAndSortButton: "",
-        // selectedFavorite: "All",
         selectedFilter: "All",
       };
     },
@@ -197,17 +196,17 @@
           }
         });
       },
-      sortFavorites: function() {
-        this.cocktails.sort((a, b) => {
-          if (a. favorite && -!b.favorite) {
-            return -1
-          } else if (!a.favorite && b.favorite) {
-            return 1
-          } else {
-            return 0
-          }
-        });
-      },      
+      // sortFavorites: function() {
+      //   this.cocktails.sort((a, b) => {
+      //     if (a. favorite && -!b.favorite) {
+      //       return -1
+      //     } else if (!a.favorite && b.favorite) {
+      //       return 1
+      //     } else {
+      //       return 0
+      //     }
+      //   });
+      // },      
       colorToggle(id) {
         this.activeFilterAndSortButton = id;
       },    
