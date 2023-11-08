@@ -19,7 +19,7 @@
           <label><input type="radio" v-model="selectedFilter" value="true" /> Show Favorites</label>
         </div>
         <br />
-        Sort by:
+        <!-- Sort by:
         <div id="filter-and-sort-buttons-row">
           <div id="filter-and-sort-button-wrapper">
             <button
@@ -39,7 +39,7 @@
               Z-A
             </button>
           </div>
-          <!-- <div id="filter-and-sort-button-wrapper">
+          <div id="filter-and-sort-button-wrapper">
             <button
               id="filter-and-sort-button"
               v-on:click="sortFavorites(); colorToggle('Favorites');"
@@ -47,7 +47,7 @@
             >
               Favorites
             </button>
-          </div> -->
+          </div>
         </div>
         <div id="filter-and-sort-buttons-row">
           <div id="filter-and-sort-button-wrapper">
@@ -68,7 +68,7 @@
               Oldest Cocktail First
             </button>            
           </div>          
-        </div>
+        </div> -->
       </div>
     </div>
 
