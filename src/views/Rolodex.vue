@@ -15,8 +15,12 @@
     <div id="below-nav">
       <div id="filter-and-sort-area">
         <div id="filter-and-sort-button-wrapper">
-          <label><input type="radio" v-model="selectedFilter" value="All" /> Show All</label>
-          <label><input type="radio" v-model="selectedFilter" value="true" /> Show Favorites</label>
+          <!-- Filter Buttons -->
+          <div class="filter-radio-toolbar">
+            <input type="radio" id="radio1" v-model="selectedFilter" value="All" checked><label for="radio1">Show All</label>
+            <div class="divider"></div> 
+            <input type="radio" id="radio2" v-model="selectedFilter" value="true"><label for="radio2">Show Favorites</label>
+          </div>
         </div>
         <br />
         <!-- Sort by:
@@ -303,7 +307,7 @@ html {
 }
 #below-nav {
   margin-top: 125px;
-  margin-bottom: 50px;
+  margin-bottom: 5px;
 }
 @media only screen and (max-width: 725px) {
   #below-nav {
@@ -373,5 +377,33 @@ html {
 .activeFilterAndSortButtonClass {
   background-color: #dfe9df!important;
   color: black!important;
+}
+.filter-radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+.filter-radio-toolbar label {
+  font-family: "Roboto Mono", monospace;
+  background-color: #078bbf;
+  border: none;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  font-weight: bold; 
+}
+.filter-radio-toolbar input[type="radio"]:checked + label {
+  background-color: #dfe9df!important;
+  color: black!important;  
+}
+.divider{
+  width:5px;
+  height:auto;
+  display:inline-block;
 }
 </style>
