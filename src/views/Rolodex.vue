@@ -126,25 +126,6 @@
               }
             })
         )
-
-
-
-
-        // var isFavorite = this.selectedFavorite;
-        // if(isFavorite === "All") {
-        //   return this.cocktails;
-        // } else {
-        //   return this.cocktails.filter(function(cocktail) {
-        //     return cocktail.favorite === true;
-        //   });
-        // }
-        // let filteredCocktails = this.cocktails.filter((cocktail) => {
-        //   return cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase()) || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase());
-        // })
-        // let orderedCocktails = filteredCocktails.sort((a, b) => {
-        //   return b.cocktail_name - a.cocktail_name;
-        // })
-        // return orderedCocktails;
       },
     },
     methods: {
