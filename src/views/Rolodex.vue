@@ -15,7 +15,7 @@
     <div id="below-nav">
       <div id="filter-and-sort-area">
         <div id="filter-and-sort-button-wrapper">
-          <label><input filter-and-sort-button type="radio" v-model="selectedFilter" value="All" /> Show All</label>
+          <label><input type="radio" v-model="selectedFilter" value="All" /> Show All</label>
           <label><input type="radio" v-model="selectedFilter" value="true" /> Show Favorites</label>
         </div>
         <br />
