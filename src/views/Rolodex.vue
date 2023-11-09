@@ -23,6 +23,8 @@
           </div>
         </div>
         <br />
+
+
         <!-- Sort by:
         <div id="filter-and-sort-buttons-row">
           <div id="filter-and-sort-button-wrapper">
@@ -371,6 +373,9 @@ html {
     margin-right: 1px;
   }
   #filter-and-sort-button {
+    font-size: 12px;
+  }
+  .filter-radio-toolbar {
     font-size: 12px;
   }
 }
