@@ -23,7 +23,16 @@
           </div>
         </div>
         <br />
+        <!-- dropdown -->
+        <SortDropdown />
+        <!-- <div class="custom-select">
+          <select>
+            <option value="">Sort By</option>
+            <option value="">Alphabetically Descending</option>
+            <option value="">Alphabetically Ascending</option>
 
+          </select>
+        </div> -->
 
         <!-- Sort by:
         <div id="filter-and-sort-buttons-row">
@@ -94,13 +103,14 @@
   import Recipe from '../components/Recipe.vue';
   import AddRecipe from '../components/AddRecipe.vue';
   import MenuButton from '../components/MenuButton.vue';
-  // import FilterSort from '../components/FilterSort.vue';
+  import SortDropdown from '../components/SortDropdown.vue';
 
   export default {
     components: {
       AddRecipe,
       Recipe,
       MenuButton,
+      SortDropdown,
     },
     data: function () {
       return {
