@@ -13,9 +13,8 @@
         <h4>
           <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
         </h4>
-        <!-- <br />
-        <h4>Favorite Test</h4>
-        <div class="pre-formatted">{{ cocktail.favorite }}</div> -->
+        <br />
+        <div><b>Tag: </b>{{ cocktail.tag }}</div>
       </div>
       <!-- <br /> -->
       <!-- <br /> -->
@@ -30,6 +29,7 @@
                 <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
                 <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
                 <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
+                <p><input type="text" v-model="editCocktailParams.tag" placeholder="Edit tag"></p>
                 <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
