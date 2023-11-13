@@ -22,68 +22,6 @@
             <input type="radio" id="radio2" v-model="selectedFilter" value="true"><label for="radio2">Show Favorites</label>
           </div>
         </div>
-        <br />
-        <!-- dropdown -->
-        <SortDropdown />
-        <!-- <div class="custom-select">
-          <select>
-            <option value="">Sort By</option>
-            <option value="">Alphabetically Descending</option>
-            <option value="">Alphabetically Ascending</option>
-
-          </select>
-        </div> -->
-
-        <!-- Sort by:
-        <div id="filter-and-sort-buttons-row">
-          <div id="filter-and-sort-button-wrapper">
-            <button
-              id="filter-and-sort-button"
-              v-on:click="sortDescending(); colorToggle('A-Z');"
-              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'A-Z' }"
-            >
-              A-Z
-            </button>
-          </div>
-          <div id="filter-and-sort-button-wrapper">
-            <button
-              id="filter-and-sort-button"
-              v-on:click="sortAscending(); colorToggle('Z-A');"
-              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'Z-A' }"
-            >
-              Z-A
-            </button>
-          </div>
-          <div id="filter-and-sort-button-wrapper">
-            <button
-              id="filter-and-sort-button"
-              v-on:click="sortFavorites(); colorToggle('Favorites');"
-              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'Favorites' }"
-            >
-              Favorites
-            </button>
-          </div>
-        </div>
-        <div id="filter-and-sort-buttons-row">
-          <div id="filter-and-sort-button-wrapper">
-            <button
-              id="filter-and-sort-button"
-              v-on:click="sortNewestFirst(); colorToggle('Newest Cocktail First');"
-              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'Newest Cocktail First' }"
-            >
-              Newest Cocktail First
-            </button>
-          </div>
-          <div id="filter-and-sort-button-wrapper">
-            <button
-              id="filter-and-sort-button"
-              v-on:click="sortOldestFirst(); colorToggle('Oldest Cocktail First');"
-              :class="{ activeFilterAndSortButtonClass: activeFilterAndSortButton === 'Oldest Cocktail First' }"
-            >
-              Oldest Cocktail First
-            </button>            
-          </div>          
-        </div> -->
       </div>
     </div>
 
@@ -103,14 +41,14 @@
   import Recipe from '../components/Recipe.vue';
   import AddRecipe from '../components/AddRecipe.vue';
   import MenuButton from '../components/MenuButton.vue';
-  import SortDropdown from '../components/SortDropdown.vue';
+  // import SortDropdown from '../components/SortDropdown.vue';
 
   export default {
     components: {
       AddRecipe,
       Recipe,
       MenuButton,
-      SortDropdown,
+      // SortDropdown,
     },
     data: function () {
       return {
@@ -172,57 +110,6 @@
           return false;
         }
       },
-      sortDescending: function () {
-        this.cocktails.sort(function(a, b) {
-          let x = a.cocktail_name.toLowerCase();
-          let y = b.cocktail_name.toLowerCase();
-          if (x < y) {return -1;}
-          if (x > y) {return 1;}
-          return 0;
-        });
-      },
-      sortAscending: function () {
-        this.cocktails.sort(function(a, b) {
-          let x = a.cocktail_name.toLowerCase();
-          let y = b.cocktail_name.toLowerCase();
-          if (x > y) {return -1;}
-          if (x < y) {return 1;}
-          return 0;
-        });
-      },
-      sortNewestFirst: function () {
-        this.cocktails.sort((a, b) => {
-          if(Date.parse(a.created_at) < Date.parse(b.created_at)) {
-            return 1
-          } else if (Date.parse(a.created_at) > Date.parse(b.created_at)) {
-            return -1
-          } else {
-            return 0
-          }
-        });
-      },
-      sortOldestFirst: function () {
-        this.cocktails.sort((a, b) => {
-          if(Date.parse(a.created_at) > Date.parse(b.created_at)) {
-            return 1
-          } else if (Date.parse(a.created_at) < Date.parse(b.created_at)) {
-            return -1
-          } else {
-            return 0
-          }
-        });
-      },
-      // sortFavorites: function() {
-      //   this.cocktails.sort((a, b) => {
-      //     if (a. favorite && -!b.favorite) {
-      //       return -1
-      //     } else if (!a.favorite && b.favorite) {
-      //       return 1
-      //     } else {
-      //       return 0
-      //     }
-      //   });
-      // },      
       colorToggle(id) {
         this.activeFilterAndSortButton = id;
       },    
