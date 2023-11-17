@@ -1,10 +1,12 @@
 <template>
-  <div class="app">  
+  <div class="app">
+    <!-- Navbar -->
     <div class="nav-bar">
       <MenuButton />
       <div class="search">
-        <input type="search" v-model="search" placeholder="Search Cocktails">
+        <input type="search" v-model="search" placeholder="Search Cocktails" />
       </div>
+      <!-- Add Cocktail -->
       <div v-if="isLoggedIn()">
         <div id="add-button-position">
           <AddRecipe @addCocktail="addNewCocktail" />
@@ -12,15 +14,49 @@
       </div>
     </div>
     <br />
+
+    <!-- Filter Buttons -->
     <div id="below-nav">
       <div id="filter-and-sort-area">
+        <div><b>Filter by:</b></div>
+        <div class="line-break"></div>
         <div id="filter-and-sort-button-wrapper">
-          <!-- Filter Buttons -->
           <div class="filter-radio-toolbar">
-            <input type="radio" id="radio1" v-model="selectedFilter" value="All" checked><label for="radio1">Show All</label>
-            <div class="divider"></div> 
-            <input type="radio" id="radio2" v-model="selectedFilter" value="true"><label for="radio2">Show Favorites</label>
-          </div>
+            <!-- Favorite Filter -->
+            <input
+              type="radio"
+              id="radio1"
+              v-model="favoriteFilter"
+              value="All"
+              checked
+            />
+            <label for="radio1">Show All</label>
+            <input
+              type="radio"
+              id="radio2"
+              v-model="favoriteFilter"
+              value="true"
+            />
+            <label for="radio2">Favorites</label>
+            <!-- Tag Filters -->
+            <template v-for="cocktail in uniqueTags">
+              <span :key="cocktail.id" v-if="cocktail.tag">
+                <input
+                  type="radio"
+                  :id="`radioFilter${cocktail.id}`"
+                  :value="cocktail.tag"
+                  v-model="tagFilter"
+                />
+                <label :for="`radioFilter${cocktail.id}`">
+                  {{ cocktail.tag }}
+                  <!-- {{ ((index == 0) || cocktail.tag != cocktails[index-1].tag) ? cocktail.tag : '' }} -->
+                </label> 
+              </span>
+            </template>
+            <button id="filter-and-sort-button" v-if="tagFilter !== ''" v-on:click="tagFilter = ''">
+              Clear Tags
+            </button>
+          </div> 
         </div>
       </div>
     </div>
@@ -55,7 +91,8 @@
         cocktails: [],
         search: "",
         activeFilterAndSortButton: "",
-        selectedFilter: "All",
+        favoriteFilter: "All",
+        tagFilter: "",
       };
     },
     mounted: function () {
@@ -67,18 +104,33 @@
         return (
           this.cocktails
             // search filter
-            .filter(cocktail => {
+            .filter((cocktail) => {
               return cocktail.ingredient?.toLowerCase().includes(this.search.toLowerCase()) || cocktail.cocktail_name.toLowerCase().includes(this.search.toLowerCase());
             })
             // favorite filter
-            .filter(cocktail => {
-              if (this.selectedFilter === "" || this.selectedFilter === "All") {
-                return this.cocktails
+            .filter((cocktail) => {
+              if (this.favoriteFilter === "" || this.favoriteFilter === "All") {
+                return cocktail;
               } else {
-                return cocktail.favorite === true
+                return cocktail.favorite === true;
               }
             })
-        )
+            // tag filter
+            .filter((cocktail) => {
+              if (this.tagFilter === "") {
+                return cocktail;
+              } else {
+                return cocktail.tag === this.tagFilter;
+              }
+            })
+        );
+      },
+      uniqueTags() {
+      return this.cocktails.reduce((seed, current) => {
+        return Object.assign(seed, {
+          [current.tag]: current
+          });
+        }, {});
       },
     },
     methods: {
@@ -112,7 +164,7 @@
       },
       colorToggle(id) {
         this.activeFilterAndSortButton = id;
-      },    
+      },
     },
   };
 </script>
@@ -249,7 +301,7 @@ html {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 15px;
   margin: 4px 2px;
   border-radius: 10px;
   font-weight: bold;  
@@ -280,11 +332,13 @@ html {
   background-color: #dfe9df!important;
   color: black!important;
 }
+/* Change radio to button */
 .filter-radio-toolbar input[type="radio"] {
   opacity: 0;
   position: fixed;
   width: 0;
 }
+/* Change radio to button */
 .filter-radio-toolbar label {
   font-family: "Roboto Mono", monospace;
   background-color: #078bbf;
@@ -307,5 +361,8 @@ html {
   width:5px;
   height:auto;
   display:inline-block;
+}
+.line-break{
+  margin-bottom: 5px;
 }
 </style>

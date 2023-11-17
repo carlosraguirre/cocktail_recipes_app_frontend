@@ -16,8 +16,6 @@
         <br />
         <div><b>Tag: </b>{{ cocktail.tag }}</div>
       </div>
-      <!-- <br /> -->
-      <!-- <br /> -->
 
       <!-- Edit Recipe -->
       <div>
