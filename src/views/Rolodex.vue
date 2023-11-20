@@ -49,7 +49,7 @@
                 />
                 <label :for="`radioFilter${cocktail.id}`">
                   {{ cocktail.tag }}
-                  <!-- {{ ((index == 0) || cocktail.tag != cocktails[index-1].tag) ? cocktail.tag : '' }} -->
+                  
                 </label> 
               </span>
             </template>
