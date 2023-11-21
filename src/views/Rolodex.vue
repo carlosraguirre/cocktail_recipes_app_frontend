@@ -44,11 +44,11 @@
               <option value="">
                     Select Tag
               </option>
-              <option v-for="cocktail in uniqueTags" v-if="cocktail.tag !== null && cocktail.tag !== ''" >
-                <option :key="cocktail.id">
+              <template v-for="cocktail in uniqueTags">
+                <option :key="cocktail.id" v-if="cocktail.tag !== null && cocktail.tag !== ''">
                   {{ cocktail.tag }}
                 </option>
-              </option> 
+              </template> 
             </select>
             <button id="filter-and-sort-button" v-if="tagFilter !== ''" v-on:click="tagFilter = ''">
               Clear Tag
