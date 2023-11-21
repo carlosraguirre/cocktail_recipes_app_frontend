@@ -3,18 +3,23 @@
     <div class="box">
       <!-- Recipe Index -->
       <div id="original">
-        <h2>{{ cocktail.cocktail_name }} {{ cocktail.favorite ? '(Favorite)' : '' }}</h2>
-        <h4>Ingredients</h4>
+        <br />
+        <h5><b>{{ cocktail.cocktail_name }} {{ cocktail.favorite ? '(Favorite)' : '' }}</b></h5>
+        <br />
+        <br />
+        <b>Ingredients</b>
         <div class="pre-formatted">{{ cocktail.ingredient }}</div>
         <br />
-        <h4>Directions</h4>
+        <b>Directions</b>
         <div class="pre-formatted">{{ cocktail.direction }}</div>
         <br />
-        <h4>
+        <b>
           <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
-        </h4>
+        </b>
+        <br />
         <br />
         <div><b>Tag: </b>{{ cocktail.tag }}</div>
+        <br />
       </div>
 
       <!-- Edit Recipe -->
