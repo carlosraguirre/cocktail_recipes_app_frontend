@@ -27,7 +27,7 @@
               type="radio"
               id="radio1"
               v-model="favoriteFilter"
-              value="All"
+              value=""
               checked
             />
             <label for="radio1">Show All</label>
@@ -39,22 +39,18 @@
             />
             <label for="radio2">Favorites</label>
             <!-- Tag Filters -->
-            <template v-for="cocktail in uniqueTags">
-              <span :key="cocktail.id" v-if="cocktail.tag">
-                <input
-                  type="radio"
-                  :id="`radioFilter${cocktail.id}`"
-                  :value="cocktail.tag"
-                  v-model="tagFilter"
-                />
-                <label :for="`radioFilter${cocktail.id}`">
+            <select v-model="tagFilter">
+              <option value="">
+                    Select Tag
+              </option>
+              <option v-for="cocktail in uniqueTags" v-if="cocktail.tag !== null && cocktail.tag !== ''" >
+                <option :key="cocktail.id">
                   {{ cocktail.tag }}
-                  
-                </label> 
-              </span>
-            </template>
+                </option>
+              </option> 
+            </select>
             <button id="filter-and-sort-button" v-if="tagFilter !== ''" v-on:click="tagFilter = ''">
-              Clear Tags
+              Clear Tag
             </button>
           </div> 
         </div>
