@@ -38,6 +38,7 @@
               value="true"
             />
             <label for="radio2">Favorites</label>
+            <div class="divider"></div>
             <!-- Tag Filters -->
             <select v-model="tagFilter">
               <option value="">
@@ -259,6 +260,7 @@ html {
 @media only screen and (max-width: 725px) {
   #below-nav {
     margin-top: 100px;
+    margin-bottom: -10px;
   }
 }
 #add-button-position {
@@ -270,8 +272,8 @@ html {
   align-items: center;
   justify-content: center;
   /* background-color: #2c3e50; */
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   font-size: 16px;
 }
 #filter-and-sort-buttons-row {
@@ -304,25 +306,6 @@ html {
   /* height: 33px;
   width: 100%; */
   /* margin: 5px; */
-}
-@media only screen and (max-width: 725px) {
-  #filter-and-sort-area {
-    width: 100%;
-    font-size: 12px;
-  }
-  #filter-and-sort-buttons-row {
-    display: inline-block;
-  }
-  #filter-and-sort-button-wrapper {
-    margin-left: 1px;
-    margin-right: 1px;
-  }
-  #filter-and-sort-button {
-    font-size: 12px;
-  }
-  .filter-radio-toolbar {
-    font-size: 12px;
-  }
 }
 .activeFilterAndSortButtonClass {
   background-color: #dfe9df!important;
@@ -360,5 +343,28 @@ html {
 }
 .line-break{
   margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 725px) {
+  #filter-and-sort-area {
+    width: 100%;
+    font-size: 12px;
+  }
+  #filter-and-sort-buttons-row {
+    display: inline-block;
+  }
+  #filter-and-sort-button-wrapper {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
+  #filter-and-sort-button {
+    font-size: 10px;
+  }
+  .filter-radio-toolbar {
+    font-size: 10px;
+  }
+  .filter-radio-toolbar label {
+    font-size: 10px;
+  }  
 }
 </style>
