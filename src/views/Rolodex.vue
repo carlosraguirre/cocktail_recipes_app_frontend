@@ -40,7 +40,7 @@
             <label for="radio2">Favorites</label>
             <div class="divider"></div>
             <!-- Tag Filters -->
-            <select v-model="tagFilter">
+            <select v-model="tagFilter" class="dropdown">
               <option value="">
                     Select Tag
               </option>
@@ -343,6 +343,9 @@ html {
 }
 .line-break{
   margin-bottom: 5px;
+}
+.dropdown {
+  font: inherit;
 }
 
 @media only screen and (max-width: 725px) {
