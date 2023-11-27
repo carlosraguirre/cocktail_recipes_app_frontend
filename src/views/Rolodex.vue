@@ -1,18 +1,68 @@
 <template>
   <div class="app">
     <!-- Navbar -->
-    <div class="nav-bar">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-info justify-content-center">
+
+      <!-- Search -->
+      <ul class="navbar-nav">
+        <form class ="form-inline">
+          <span class="nav-bar-media-text-size"> 
+            <input type="search" v-model="search" placeholder="Search Cocktails" />
+          </span>
+        </form>
+      </ul>
+
+      <!-- Collapse Toggle -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="collapsingNavbar">
+        <ul class="navbar-nav">         
+          <li class="nav-item dropdown">
+            <span class="nav-bar-media-text-size">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                Actions & Info
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </span>
+          </li>
+        </ul>
+        <!-- Right Side -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <span class="nav-bar-media-text-size">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                User
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Log Out</a>
+              </div>
+            </span>
+          </li>          
+        </ul>
+      </div>
+
+
+      
+    </nav>
+
+    <!-- <div class="nav-bar">
       <MenuButton />
       <div class="search">
         <input type="search" v-model="search" placeholder="Search Cocktails" />
-      </div>
+      </div> -->
       <!-- Add Cocktail -->
-      <div v-if="isLoggedIn()">
+      <!-- <div v-if="isLoggedIn()">
         <div id="add-button-position">
           <AddRecipe @addCocktail="addNewCocktail" />
         </div>
       </div>
-    </div>
+    </div> -->
     <br />
 
     <!-- Filter Buttons -->
@@ -254,12 +304,12 @@ html {
   }
 }
 #below-nav {
-  margin-top: 125px;
+  margin-top: 40px;
   margin-bottom: 5px;
 }
 @media only screen and (max-width: 725px) {
   #below-nav {
-    margin-top: 100px;
+    margin-top: 40px;
     margin-bottom: -10px;
   }
 }
@@ -327,7 +377,7 @@ html {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   margin: 4px 2px;
   border-radius: 10px;
   font-weight: bold; 
@@ -346,6 +396,7 @@ html {
 }
 .dropdown {
   font: inherit;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 725px) {
@@ -368,6 +419,20 @@ html {
   }
   .filter-radio-toolbar label {
     font-size: 10px;
-  }  
+  }
+  .nav-bar-component {
+    font-size: 10px;
+  }
+  .nav-bar-media-text-size {
+    font-size: 12px;
+  }
+}
+
+/* nav bar */
+input{
+  text-align:center;
+}
+.nav-bar-media-text-size {
+  font-size: 16px;
 }
 </style>

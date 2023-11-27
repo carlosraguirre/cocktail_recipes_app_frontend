@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import AdminLogin from '../views/AdminLogin.vue';
 import Logout from "../views/Logout.vue";
 import Rolodex from "../views/Rolodex.vue";
+import 'bootstrap';
 
 Vue.use(VueRouter)
 
