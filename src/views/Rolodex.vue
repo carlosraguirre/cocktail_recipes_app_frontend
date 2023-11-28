@@ -16,6 +16,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <!-- Actions & Info -->
       <div class="navbar-collapse collapse" id="collapsingNavbar">
         <ul class="navbar-nav">         
           <li class="nav-item dropdown">
@@ -27,7 +28,12 @@
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item">
+                  <p>Saved Cocktails: {{cocktails.length}}</p>
+                </a>
+                <a class="dropdown-item">
+                  <p>Favorite Cocktails: {{ getNumberOfFavs(true) }}</p>
+                </a>                
               </div>
             </span>
           </li>
@@ -202,7 +208,7 @@
       editCocktail: function (cocktail) {
         console.log("edit cocktail", cocktail);
       },
-      isLoggedIn: function() {
+      isLoggedIn: function () {
         if (localStorage.getItem("jwt")) {
           return true;
         } else {
@@ -211,6 +217,10 @@
       },
       colorToggle(id) {
         this.activeFilterAndSortButton = id;
+      },
+      getNumberOfFavs: function (fav) {
+        var favLength = this.cocktails.filter((item) => item.favorite == fav);
+        return favLength.length;
       },
     },
   };
