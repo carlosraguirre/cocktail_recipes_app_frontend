@@ -38,7 +38,7 @@
             </span>
           </li>
         </ul>
-        <!-- Right Side -->
+        <!-- User actions -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
             <span class="nav-bar-media-text-size">
@@ -46,7 +46,8 @@
                 User
               </a>
               <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="#">Log Out</a>
+                <a class="dropdown-item" v-if="isLoggedIn()" href="/Logout">Log Out</a>
+                <a class="dropdown-item" v-else href="/Login">Log In</a>                
               </div>
             </span>
           </li>          
@@ -129,14 +130,14 @@
   import axios from "axios";
   import Recipe from '../components/Recipe.vue';
   import AddRecipe from '../components/AddRecipe.vue';
-  import MenuButton from '../components/MenuButton.vue';
+  // import MenuButton from '../components/MenuButton.vue';
   // import SortDropdown from '../components/SortDropdown.vue';
 
   export default {
     components: {
       AddRecipe,
       Recipe,
-      MenuButton,
+      // MenuButton,
       // SortDropdown,
     },
     data: function () {
@@ -222,6 +223,13 @@
         var favLength = this.cocktails.filter((item) => item.favorite == fav);
         return favLength.length;
       },
+      isLoggedIn: function() {
+        if (localStorage.getItem("jwt")) {
+          return true;
+        } else {
+          return false;
+        }
+      },      
     },
   };
 </script>

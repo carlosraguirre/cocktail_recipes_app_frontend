@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import AdminLogin from '../views/AdminLogin.vue';
+import Login from '../views/Login.vue';
 import Logout from "../views/Logout.vue";
 import Rolodex from "../views/Rolodex.vue";
 import 'bootstrap';
@@ -9,9 +9,9 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/AdminLogin',
-    name: 'AdminLogin',
-    component: AdminLogin
+    path: '/Login',
+    name: 'Login',
+    component: Login
   },
   {
     path: "/logout",
