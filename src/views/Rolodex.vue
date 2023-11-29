@@ -25,8 +25,7 @@
                 Actions & Info
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" v-if="isLoggedIn()"><AddRecipe @addCocktail="addNewCocktail" /></a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item">
                   <p>Saved Cocktails: {{cocktails.length}}</p>
@@ -38,7 +37,7 @@
             </span>
           </li>
         </ul>
-        <!-- User actions -->
+        <!-- User Actions -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
             <span class="nav-bar-media-text-size">

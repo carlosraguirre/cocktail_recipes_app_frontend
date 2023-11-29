@@ -15,9 +15,10 @@
         </div>
       </div>
     </transition>
-    <button id="add-button" v-on:click="isAddModalOpen = !isAddModalOpen;">
+    <!-- <button id="add-button" v-on:click="isAddModalOpen = !isAddModalOpen;">
       {{ isAddModalOpen ? "Close" : "Add Cocktail" }}
-    </button>
+    </button> -->
+    <p>Add New Cocktail</p>
   </div>
 </template>
 
