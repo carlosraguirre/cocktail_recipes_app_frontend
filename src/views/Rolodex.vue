@@ -1,7 +1,8 @@
 <template>
   <div class="app">
+
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-info justify-content-center">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-info">
 
       <!-- Search -->
       <ul class="navbar-nav">
@@ -25,7 +26,11 @@
                 Actions & Info
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" v-if="isLoggedIn()"><AddRecipe @addCocktail="addNewCocktail" /></a>
+                <a class="dropdown-item" v-if="isLoggedIn()">
+                  <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addCocktailModal">
+                    Add Cocktail
+                  </button>
+                </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item">
                   <p>Saved Cocktails: {{cocktails.length}}</p>
@@ -37,6 +42,7 @@
             </span>
           </li>
         </ul>
+        
         <!-- User Actions -->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
@@ -51,24 +57,13 @@
             </span>
           </li>          
         </ul>
-      </div>
-
-
-      
+      </div>      
     </nav>
 
-    <!-- <div class="nav-bar">
-      <MenuButton />
-      <div class="search">
-        <input type="search" v-model="search" placeholder="Search Cocktails" />
-      </div> -->
-      <!-- Add Cocktail -->
-      <!-- <div v-if="isLoggedIn()">
-        <div id="add-button-position">
-          <AddRecipe @addCocktail="addNewCocktail" />
-        </div>
-      </div>
-    </div> -->
+    <!-- Add Recipe Modal -->
+    <div>
+      <AddRecipeModal @addCocktail="addNewCocktail" data-target="addCocktailModal" />
+    </div>    
     <br />
 
     <!-- Filter Buttons -->
@@ -128,15 +123,13 @@
 <script>
   import axios from "axios";
   import Recipe from '../components/Recipe.vue';
-  import AddRecipe from '../components/AddRecipe.vue';
-  // import MenuButton from '../components/MenuButton.vue';
+  import AddRecipeModal from '../components/AddRecipeModal.vue';
   // import SortDropdown from '../components/SortDropdown.vue';
 
   export default {
     components: {
-      AddRecipe,
       Recipe,
-      // MenuButton,
+      AddRecipeModal,
       // SortDropdown,
     },
     data: function () {
@@ -256,69 +249,11 @@
 .pre-formatted {
   white-space: pre-line;
 }
-.modal {
-  width: 500px;
-  margin: 0px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 7px;
-  box-shadow: 0 2px 8px 3px;
-  transition: all 0.2s ease-in;
-  font-family: "Roboto Mono", monospace;
-}
-.fadeIn-enter {
-  opacity: 0;
-}
-.fadeIn-leave-active {
-  opacity: 0;
-  transition: all 0.2s step-end;
-}
-.fadeIn-enter .modal,
-.fadeIn-leave-active.modal {
-  transform: scale(1.1);
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background: whitesmoke;
-  z-index: 999;
-  transition: opacity 0.2s ease;
-}
 *, *:before, *:after {
   box-sizing: inherit;
 }
 html {
   box-sizing: border-box;
-}
-.nav-bar {
-  display: flex;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  align-items: center;
-  width: 100%;
-  background: white;
-  padding: 10px;
-}
-.search {
-  flex: 1;
-}
-.search input {
-  width: 65%;
-  font-size: 17px;
-  font-family: "Roboto Mono", monospace;  
-}
-@media only screen and (max-width: 725px) {
-  .search input {
-    font-size: 12px;
-  }
 }
 #below-nav {
   margin-top: 40px;
@@ -329,9 +264,6 @@ html {
     margin-top: 40px;
     margin-bottom: -10px;
   }
-}
-#add-button-position {
-  margin: 20px;
 }
 #filter-and-sort-area {
   width: 100%;
@@ -446,10 +378,11 @@ html {
 }
 
 /* nav bar */
-input{
-  text-align:center;
-}
+/* input{
+  text-align: center;
+} */
 .nav-bar-media-text-size {
   font-size: 16px;
 }
+
 </style>
