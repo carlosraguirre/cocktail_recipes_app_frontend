@@ -19,7 +19,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-info" v-on:click="cocktailCreate()">Add Cocktail</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal" v-on:click="cocktailCreate()">Add Cocktail</button>
           </div>
         </div>
       </div>
@@ -34,7 +34,6 @@
     data: function () {
       return {
         newCocktailParams: {},
-        // isAddModalOpen: false,
       };
     },
     methods: {
@@ -52,7 +51,6 @@
           this.$emit('addCocktail', response.data);
           this.newCocktailParams = {};
         });
-        // this.isAddModalOpen=false;
       },
     },
   }
