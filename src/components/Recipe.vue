@@ -14,7 +14,7 @@
         <div class="pre-formatted">{{ cocktail.direction }}</div>
         <br />
         <b>
-          <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Cocktail</a>
+          <a v-bind:href="cocktail.recipe_link" target="_blank">Link to Recipe</a>
         </b>
         <br />
         <br />
@@ -22,9 +22,8 @@
         <br />
       </div>
 
-      <!-- Edit Recipe -->
+      <!-- Edit Recipe Modal -->
       <div>
-        <!-- Modal -->
         <div class="modal fade" id="editRecipeModal" tabindex="-1" aria-labelledby="editRecipeModalLabel" aria-hidden="true" v-if="isEditModalOpen">
           <div class="modal-dialog" v-on:click.self="isEditModalOpen = false;">
             <div class="modal-content">
@@ -48,22 +47,6 @@
             </div>
           </div>
         </div>
-
-
-        <!-- <transition name="modal">
-          <div v-if="isEditModalOpen">
-            <div class="overlay" v-on:click.self="isEditModalOpen = false;">
-              <div class="modal">
-                <p><input type="text" v-model="editCocktailParams.cocktail_name" placeholder="Name"></p>
-                <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
-                <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
-                <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
-                <p><input type="text" v-model="editCocktailParams.tag" placeholder="Edit tag"></p>
-                <button id="edit-button" v-on:click="updateCocktail()">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </transition> -->
       </div>
 
         <!-- Favorite, Delete & Edit Buttons -->
@@ -85,7 +68,7 @@
             <button id="delete-button" v-on:click="destroyCocktail()">Delete</button> 
             &nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editRecipeModal" v-on:click="editModalOpen(cocktail)">
-              {{ isEditModalOpen ? "Close" : "Edit" }}
+              Edit
             </button>
           </div>
         </div>
