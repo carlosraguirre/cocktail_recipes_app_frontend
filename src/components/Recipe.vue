@@ -50,28 +50,32 @@
       </div>
 
         <!-- Favorite, Delete & Edit Buttons -->
-      <div>
-        <div v-if="isLoggedIn()">
-          <h4 v-if="cocktail.favorite === false">
-            <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="addtoFavorites()">
-              Add to Favorites
-            </button>
-          </h4>
-          <h4 v-if="cocktail.favorite === true">
-            <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="removeFavorite()">
-              Remove from Favorites
-            </button>
-          </h4>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="btn-group" role="group" aria-label="Favorite Group" v-if="isLoggedIn()">
+            <h4 v-if="cocktail.favorite === false">
+              <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="addtoFavorites()">
+                Add to Favorites
+              </button>
+            </h4>
+            <h4 v-if="cocktail.favorite === true">
+              <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="removeFavorite()">
+                Remove from Favorites
+              </button>
+            </h4>
+          </div>
         </div>
-        <div v-if="isLoggedIn()">
-          <div id="button-container">
-            <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="destroyCocktail()">
-              Delete
-            </button> 
-            &nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-info rounded-pill" data-toggle="modal" data-target="#editRecipeModal" v-on:click="editModalOpen(cocktail)">
-              Edit
-            </button>
+        <div class="row justify-content-center">
+          <div v-if="isLoggedIn()">
+            <div class="btn-group" role="group" aria-label="Delete and Edit Group">
+              <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="destroyCocktail()">
+                Delete
+              </button> 
+              &nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-info rounded-pill" data-toggle="modal" data-target="#editRecipeModal" v-on:click="editModalOpen(cocktail)">
+                Edit
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -164,13 +168,13 @@
     width: 100%;
     font-size: 12px;
   }
-  #button-container {
+  /* #button-container {
     display: inline-block;
-  }
+  } */
 }
-#button-container {
+/* #button-container {
   text-align: center;
-}
+} */
 
 /* Favorite Button */
 /* #favorite-button {
