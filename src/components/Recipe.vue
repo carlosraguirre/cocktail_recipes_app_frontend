@@ -53,19 +53,21 @@
       <div>
         <div v-if="isLoggedIn()">
           <h4 v-if="cocktail.favorite === false">
-            <button id="favorite-button" v-on:click="addtoFavorites()">
+            <button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" v-on:click="addtoFavorites()">
               Add to Favorites
             </button>
           </h4>
           <h4 v-if="cocktail.favorite === true">
-            <button id="favorite-button" v-on:click="removeFavorite()">
+            <button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" v-on:click="removeFavorite()">
               Remove from Favorites
             </button>
           </h4>
         </div>
         <div v-if="isLoggedIn()">
           <div id="button-container">
-            <button id="delete-button" v-on:click="destroyCocktail()">Delete</button> 
+            <button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" v-on:click="destroyCocktail()">
+              Delete
+            </button> 
             &nbsp;&nbsp;&nbsp;
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editRecipeModal" v-on:click="editModalOpen(cocktail)">
               Edit
@@ -169,7 +171,9 @@
 #button-container {
   text-align: center;
 }
-#favorite-button {
+
+/* Favorite Button */
+/* #favorite-button {
   font-family: "Roboto Mono", monospace;
   background-color: #078bbf;
   border: none;
@@ -192,8 +196,10 @@
   background-color: #dfe9df;
   color: black;
   font-weight: bold;
-}
-#delete-button {
+} */
+
+/* Delete Button */
+/* #delete-button {
   font-family: "Roboto Mono", monospace;
   background-color: #078bbf;
   border: none;
@@ -216,8 +222,10 @@
   background-color: #e02c0c;
   color: white;
   font-weight: bold;
-}
-#edit-button {
+} */
+
+/* Edit Button */
+/* #edit-button {
   font-family: "Roboto Mono", monospace;
   background-color: #078bbf;
   border: none;
@@ -240,5 +248,5 @@
   background-color:#dfe9df;
   color: black;
   font-weight: bold;
-}
+} */
 </style>
