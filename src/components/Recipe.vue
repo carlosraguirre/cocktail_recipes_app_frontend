@@ -24,7 +24,33 @@
 
       <!-- Edit Recipe -->
       <div>
-        <transition name="modal">
+        <!-- Modal -->
+        <div class="modal fade" id="editRecipeModal" tabindex="-1" aria-labelledby="editRecipeModalLabel" aria-hidden="true" v-if="isEditModalOpen">
+          <div class="modal-dialog" v-on:click.self="isEditModalOpen = false;">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editRecipeModalLabel">Edit Cocktail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p><input type="text" v-model="editCocktailParams.cocktail_name" placeholder="Name"></p>
+                <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
+                <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
+                <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
+                <p><input type="text" v-model="editCocktailParams.tag" placeholder="Edit tag"></p>                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal" v-on:click="updateCocktail()">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <transition name="modal">
           <div v-if="isEditModalOpen">
             <div class="overlay" v-on:click.self="isEditModalOpen = false;">
               <div class="modal">
@@ -37,9 +63,11 @@
               </div>
             </div>
           </div>
-        </transition>
+        </transition> -->
+      </div>
 
         <!-- Favorite, Delete & Edit Buttons -->
+      <div>
         <div v-if="isLoggedIn()">
           <h4 v-if="cocktail.favorite === false">
             <button id="favorite-button" v-on:click="addtoFavorites()">
@@ -56,7 +84,7 @@
           <div id="button-container">
             <button id="delete-button" v-on:click="destroyCocktail()">Delete</button> 
             &nbsp;&nbsp;&nbsp;
-            <button id="edit-button" v-on:click="editModalOpen(cocktail)">
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editRecipeModal" v-on:click="editModalOpen(cocktail)">
               {{ isEditModalOpen ? "Close" : "Edit" }}
             </button>
           </div>
