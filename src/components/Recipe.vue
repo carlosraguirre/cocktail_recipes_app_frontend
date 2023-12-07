@@ -42,7 +42,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-info" data-dismiss="modal" v-on:click="updateCocktail()">Save changes</button>
+                <button type="button" class="btn btn-info rounded-pill" data-dismiss="modal" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
           </div>
@@ -53,23 +53,23 @@
       <div>
         <div v-if="isLoggedIn()">
           <h4 v-if="cocktail.favorite === false">
-            <button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" v-on:click="addtoFavorites()">
+            <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="addtoFavorites()">
               Add to Favorites
             </button>
           </h4>
           <h4 v-if="cocktail.favorite === true">
-            <button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" v-on:click="removeFavorite()">
+            <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="removeFavorite()">
               Remove from Favorites
             </button>
           </h4>
         </div>
         <div v-if="isLoggedIn()">
           <div id="button-container">
-            <button type="button" class="btn btn-info" data-toggle="button" aria-pressed="false" v-on:click="destroyCocktail()">
+            <button type="button" class="btn btn-info rounded-pill" data-toggle="button" aria-pressed="false" v-on:click="destroyCocktail()">
               Delete
             </button> 
             &nbsp;&nbsp;&nbsp;
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#editRecipeModal" v-on:click="editModalOpen(cocktail)">
+            <button type="button" class="btn btn-info rounded-pill" data-toggle="modal" data-target="#editRecipeModal" v-on:click="editModalOpen(cocktail)">
               Edit
             </button>
           </div>
