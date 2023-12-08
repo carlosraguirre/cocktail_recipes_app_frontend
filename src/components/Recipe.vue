@@ -25,7 +25,7 @@
       <!-- Edit Recipe Modal -->
       <div>
         <div class="modal fade" id="editRecipeModal" tabindex="-1" aria-labelledby="editRecipeModalLabel" aria-hidden="true" v-if="isEditModalOpen">
-          <div class="modal-dialog" v-on:click.self="isEditModalOpen = false;">
+          <div class="modal-dialog modal-dialog-centered" v-on:click.self="isEditModalOpen = false;">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="editRecipeModalLabel">Edit Cocktail</h5>
@@ -49,7 +49,7 @@
         </div>
       </div>
 
-        <!-- Favorite, Delete & Edit Buttons -->
+      <!-- Favorite, Delete & Edit Buttons -->
       <div class="container">
         <div class="row justify-content-center">
           <div class="btn-group" role="group" aria-label="Favorite Group" v-if="isLoggedIn()">
