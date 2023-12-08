@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../views/Login.vue';
 import Logout from "../views/Logout.vue";
-import Rolodex from "../views/Rolodex.vue";
+import MyRolodex from "../views/MyRolodex.vue";
 import 'bootstrap';
 
 Vue.use(VueRouter)
@@ -19,9 +19,9 @@ const routes = [
     component: Logout
   },
   {
-    path: "/",
-    name: "rolodex",
-    component: Rolodex
+    path: "/myrolodex",
+    name: "myrolodex",
+    component: MyRolodex
   },  
 ]
 
