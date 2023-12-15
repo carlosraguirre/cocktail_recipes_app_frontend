@@ -31,6 +31,9 @@
                     Add Cocktail
                   </button>
                 </a>
+                <a class="dropdown-item" href="/">
+                  Home
+                </a>              
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item">
                   <p>Saved Cocktails: {{cocktails.length}}</p>
