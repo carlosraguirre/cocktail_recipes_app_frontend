@@ -26,14 +26,14 @@
                 Actions & Info
               </a>
               <div class="dropdown-menu">
+                <a class="dropdown-item" href="/">
+                  Home
+                </a>                 
                 <a class="dropdown-item" v-if="isLoggedIn()">
                   <button type="button" class="btn btn-link" data-toggle="modal" data-target="#addCocktailModal">
                     Add Cocktail
                   </button>
-                </a>
-                <a class="dropdown-item" href="/">
-                  Home
-                </a>              
+                </a>             
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item">
                   <p>Saved Cocktails: {{cocktails.length}}</p>
@@ -387,5 +387,4 @@ html {
 .nav-bar-media-text-size {
   font-size: 16px;
 }
-
 </style>
