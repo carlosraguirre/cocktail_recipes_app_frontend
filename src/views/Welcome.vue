@@ -36,7 +36,7 @@
           <h1><b>About </b></h1>
           <br>
           <p>
-            With your own Cocktail Rolodex, you can save new recipes and easily search them by name or ingredients. Want to categorized your saved cocktails? You can also set Favorites and create tags!
+            With your own Cocktail Rolodex, you can save new recipes and easily search them by name or ingredients. Want to categorize your saved cocktails? You can also set Favorites and create tags!
           <br>
           <!-- Click /here/ for a tutorial on how to use your Rolodex. link opens to modal with video -->
           </p>
@@ -45,10 +45,7 @@
         <div id="login" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
           <h1><b>Login </b></h1>
           <br>
-          <p>
-            With your own Cocktail Rolodex, you can save new recipes and easily search them by name or ingredients. Want to categorized your saved cocktails? You can also set Favorites and create tags!
-          <br>
-          </p>
+          <LoginSignUp />
         </div>
         <!-- Updates -->
         <div id="updates" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
@@ -73,6 +70,13 @@
 </template>
 
 <script>
+  import LoginSignUp from '../components/LoginSignUp.vue';
+
+  export default {
+    components: {
+      LoginSignUp
+    },
+  }
 </script>
 
 <style >
@@ -82,7 +86,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  position: relative;
+  position: relative;  
 }
 .content {
   font-size: 16px;
