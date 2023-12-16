@@ -1,5 +1,7 @@
 <template>
   <body data-spy="scroll" data-target=".navbar" data-offset="50" class= "welcome bg-light">
+    
+    <!-- Nav -->
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">  
         <ul class="navbar-nav flex-row">
@@ -34,8 +36,8 @@
 
     <!-- Banner -->
     <div>
-      <div class="jumbotron jumbotron-fluid bg-info border border-dark" style="padding-top:100px">
-        <div class="container" style="max-width:1500px">
+      <div class="jumbotron jumbotron bg-info border border-dark" style="padding-top:120px">
+        <div class="container">
           <h1 class="display-3 text-black-50">Welcome to your <b class="text-white">Cocktail Rolodex!</b></h1>
           <p class="lead">Ditch your bookmarks and create your own Rolodex.</p>
         </div>
@@ -43,7 +45,7 @@
       
       <div class="content">
         <!-- About -->
-        <div id="about" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+        <div id="about" class="container bg-light" style="padding-top:70px;padding-bottom:70px">
           <h1><b>About </b></h1>
           <br>
           <p>
@@ -53,13 +55,13 @@
           </p>
         </div>
         <!-- Login -->
-        <div id="login" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+        <div id="login" class="container bg-light" style="padding-top:70px;padding-bottom:70px">
           <h1><b>Login </b></h1>
           <br>
           <LoginSignUp />
         </div>
         <!-- Updates -->
-        <div id="updates" class="container-fluid bg-light" style="padding-top:70px;padding-bottom:70px">
+        <div id="updates" class="container bg-light" style="padding-top:70px;padding-bottom:70px">
           <h1><b>Updates Corner! </b></h1>
           <br>
           <p>
