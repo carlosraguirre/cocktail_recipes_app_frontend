@@ -3,7 +3,7 @@
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">  
         <ul class="navbar-nav flex-row">
-          <li class="nav-item active nav-bar-media-text-size" v-if="isLoggedIn()">
+          <li class="nav-item active nav-bar-media-text-size">
             <a class="nav-link" href="/MyRolodex">My Rolodex</a>
           </li>
           <!-- <li class="nav-item">
