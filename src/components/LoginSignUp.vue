@@ -1,35 +1,16 @@
 <template>
-  <div>  
-    <!-- <div class="login">
-      <form v-on:submit.prevent="submit()">
-        <p id="login-header">Admin login:</p>
-        <ul>
-          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-        </ul>
-        <br />
-        <div class="form-titles">
-          <div>
-            <label>Email: </label>
-            <input type="email" v-model="newSessionParams.email" />
-          </div>
-          <div>
-            <label>Password: </label>
-            <input type="password" v-model="newSessionParams.password" />
-          </div>
-        </div>
-        <input class="submit-button" type="submit" value="Login" />
-      </form>
-    </div> -->
+  <div>
 
+    <!-- Login -->
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
-          <form>
+          <form v-on:submit.prevent="submit()">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Email" value="" />
+              <input type="text" class="form-control" placeholder="Email" v-model="newSessionParams.email" />
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder=" Password" value="" />
+              <input type="password" class="form-control" placeholder=" Password" v-model="newSessionParams.password" />
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-info rounded-pill" value="Login" />
@@ -37,6 +18,9 @@
             <div class="form-group">
               <a href="#" class="ForgetPwd">Forget Password?</a>
             </div>
+            <ul>
+              <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+            </ul>            
           </form>
         </div>
       </div>
@@ -106,7 +90,7 @@
           .then((response) => {
             axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
             localStorage.setItem("jwt", response.data.jwt);
-            this.$router.push("/");
+            this.$router.push("/MyRolodex");
           })
           .catch((error) => {
             console.log(error.response);
