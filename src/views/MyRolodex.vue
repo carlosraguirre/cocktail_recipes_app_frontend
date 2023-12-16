@@ -217,14 +217,7 @@
       getNumberOfFavs: function (fav) {
         var favLength = this.cocktails.filter((item) => item.favorite == fav);
         return favLength.length;
-      },
-      isLoggedIn: function() {
-        if (localStorage.getItem("jwt")) {
-          return true;
-        } else {
-          return false;
-        }
-      },      
+      },     
     },
   };
 </script>

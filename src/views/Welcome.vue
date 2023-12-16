@@ -3,10 +3,10 @@
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">  
         <ul class="navbar-nav flex-row">
-          <li class="nav-item">
+          <li class="nav-item active nav-bar-media-text-size" v-if="isLoggedIn()">
             <a class="nav-link" href="/MyRolodex">My Rolodex</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
@@ -14,14 +14,25 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#updates">Updates Corner!</a>
-          </li>
+          </li> -->
         </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown nav-bar-media-text-size ">
+            <span>
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                User
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" v-if="isLoggedIn()" href="/Logout">Log Out</a>
+                <a class="dropdown-item" v-else href="/Login">Log In</a>                
+              </div>
+            </span>
+          </li>          
+        </ul>        
       </nav>
-
-
-
     </div>
 
+    <!-- Banner -->
     <div>
       <div class="jumbotron jumbotron-fluid bg-info border border-dark" style="padding-top:100px">
         <div class="container" style="max-width:1500px">
@@ -57,14 +68,6 @@
         </div>
       </div>
     </div>
-
-
-    <h2>Login / Sign Up</h2>
-   
-    
-
-    <h2>Check here for site updates!</h2>
-
   </body>
   
 </template>
@@ -75,6 +78,16 @@
   export default {
     components: {
       LoginSignUp
+    },
+
+    methods: {
+      isLoggedIn: function () {
+        if (localStorage.getItem("jwt")) {
+          return true;
+        } else {
+          return false;
+        }
+      },      
     },
   }
 </script>
@@ -107,26 +120,3 @@
   }
 }
 </style>
-
-
-
-      <!-- <div id="section2" class="container-fluid bg-warning" style="padding-top:70px;padding-bottom:70px">
-        <h1>Section 2</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      </div>
-      <div id="section3" class="container-fluid bg-secondary" style="padding-top:70px;padding-bottom:70px">
-        <h1>Section 3</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      </div>
-      <div id="section41" class="container-fluid bg-danger" style="padding-top:70px;padding-bottom:70px">
-        <h1>Section 4 Submenu 1</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      </div>
-      <div id="section42" class="container-fluid bg-info" style="padding-top:70px;padding-bottom:70px">
-        <h1>Section 4 Submenu 2</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-      </div> -->

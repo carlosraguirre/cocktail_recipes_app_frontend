@@ -10,7 +10,7 @@
               <input type="text" class="form-control" placeholder="Email" v-model="newSessionParams.email" />
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder=" Password" v-model="newSessionParams.password" />
+              <input type="password" class="form-control" placeholder="Password" v-model="newSessionParams.password" />
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-info rounded-pill" value="Login" />
@@ -78,7 +78,7 @@
           .post("/users", this.newUserParams)
           .then((response) => {
             console.log(response.data);
-            this.$router.push("/");
+            this.$router.push("/myrolodex");
           })
           .catch((error) => {
             this.errors = error.response.data.errors;
@@ -90,7 +90,7 @@
           .then((response) => {
             axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
             localStorage.setItem("jwt", response.data.jwt);
-            this.$router.push("/MyRolodex");
+            this.$router.push("/myrolodex");
           })
           .catch((error) => {
             console.log(error.response);
