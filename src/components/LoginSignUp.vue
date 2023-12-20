@@ -16,45 +16,60 @@
               <input type="submit" class="btn btn-info rounded-pill" value="Login" />
             </div>
             <div class="form-group">
-              <a href="#" class="ForgetPwd">Forget Password?</a>
+              <a href="#">
+                Forget Password?
+              </a>
+            </div>
+            <div class="form-group">
+              Don't have an account? <a href="#SignUpModal" data-toggle="modal">Sign Up!</a>
             </div>
             <ul>
               <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-            </ul>            
+            </ul>   
           </form>
         </div>
       </div>
     </div>
+    
+    <!-- Sign Up -->
+    <div class="modal fade" id="SignUpModal" tabindex="-1" aria-labelledby="SignUpModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addCocktailModalLabel">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
-    <!-- <div class="signup">
-      <form v-on:submit.prevent="submitSignup()">
-        <p id="signup-header">Don't have an account? Signup here <i class="arrow-down"></i></p>
-        <h1>Signup</h1>
-        <ul>
-          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-        </ul>
-        <div class="form-titles">
-          <div>
-            <label>Name: </label>
-            <input type="text" v-model="newUserParams.name" />
+          <div class="modal-body">
+            <div class="d-flex flex-column text-center">
+              <form v-on:submit.prevent="submitSignup()">
+                <div class="form-group">
+                  <input type="text" class="form-control" v-model="newUserParams.name" id="name1" placeholder="Your name"/>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" v-model="newUserParams.email" id="email1" placeholder="Your email address"/>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" v-model="newUserParams.password" id="password1" placeholder="Your password"/>
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" v-model="newUserParams.password_confirmation" id="passwordconfirm1" placeholder="Confrim your password"/>
+                  <small v-if="newUserParams.password !== newUserParams.password_confirmation"> Passwords do not match!</small>
+                </div>
+              </form>
+            </div>
+
           </div>
-          <div>
-            <label>Email: </label>
-            <input type="email" v-model="newUserParams.email" />
-          </div>
-          <div>
-            <label>Password: </label>
-            <input type="password" v-model="newUserParams.password" />
-          </div>
-          <div>
-            <label>Password confirmation: </label>
-            <input type="password" v-model="newUserParams.password_confirmation" />
-            <small v-if="newUserParams.password !== newUserParams.password_confirmation"> Passwords do not match!</small>          
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-info rounded-pill" data-dismiss="modal" v-on:click="submitSignup()">Sign Up</button>
           </div>
         </div>
-        <input class="submit-button" type="submit" value="Submit" />
-      </form>
-    </div> -->
+      </div>
+    </div>
   </div>
 </template>
 
