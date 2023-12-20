@@ -22,7 +22,7 @@
           <li class="nav-item dropdown nav-bar-media-text-size ">
             <span>
               <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                User
+                {{ user.name }}
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" v-if="isLoggedIn()" href="/Logout">Log Out</a>
@@ -75,6 +75,7 @@
 </template>
 
 <script>
+  import axios from "axios";
   import LoginSignUp from '../components/LoginSignUp.vue';
 
   export default {
@@ -82,6 +83,16 @@
       LoginSignUp
     },
 
+    data: function () {
+      return {
+        user: "",
+      };
+    },
+
+    created: function() {
+    this.userShow()
+    }, 
+    
     methods: {
       isLoggedIn: function () {
         if (localStorage.getItem("jwt")) {
@@ -89,6 +100,11 @@
         } else {
           return false;
         }
+      },
+      userShow: function() {
+        axios.get(`/users/${localStorage.user_id}`).then((response) => {console.log(response)
+        this.user = response.data;
+        });
       },      
     },
   }

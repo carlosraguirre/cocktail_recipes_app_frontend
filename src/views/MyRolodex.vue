@@ -51,7 +51,7 @@
           <li class="nav-item dropdown">
             <span class="nav-bar-media-text-size">
               <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                User
+                {{ user.name }}
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" v-if="isLoggedIn()" href="/Logout">Log Out</a>
@@ -142,12 +142,19 @@
         activeFilterAndSortButton: "",
         favoriteFilter: "All",
         tagFilter: "",
+        user: "",
       };
     },
+
     mounted: function () {
       this.cocktailsIndex();
       this.colorToggle("Favorites");
     },
+
+    created: function() {
+    this.userShow()
+    },
+
     computed: {
       filteredCocktails() {
         return (
@@ -182,6 +189,7 @@
         }, {});
       },
     },
+
     methods: {
       cocktailsIndex: function () {
         console.log("in cocktails index");
@@ -217,7 +225,12 @@
       getNumberOfFavs: function (fav) {
         var favLength = this.cocktails.filter((item) => item.favorite == fav);
         return favLength.length;
-      },     
+      },
+      userShow: function() {
+        axios.get(`/users/${localStorage.user_id}`).then((response) => {console.log(response)
+        this.user = response.data;
+        });
+      },
     },
   };
 </script>
