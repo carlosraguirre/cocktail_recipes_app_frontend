@@ -18,8 +18,8 @@
             <p><input type="text" v-model="newCocktailParams.tag" placeholder="Add tags"></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-info" data-dismiss="modal" v-on:click="cocktailCreate()">Add Cocktail</button>
+            <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-info rounded-pill" data-dismiss="modal" v-on:click="cocktailCreate()">Add Cocktail</button>
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@
       <ul class="navbar-nav">
         <form class ="form-inline">
           <span class="nav-bar-media-text-size"> 
-            <input type="search" v-model="search" placeholder="Search Cocktails" />
+            <input type="search" class="form-control rounded-pill pr-4 mr-1" v-model="search" placeholder="Search Cocktails" />
           </span>
         </form>
       </ul>
