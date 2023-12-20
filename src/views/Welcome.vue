@@ -26,7 +26,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <a class="dropdown-item" v-if="isLoggedIn()" href="/Logout">Log Out</a>
-                <a class="dropdown-item" v-else href="/Login">Log In</a>                
+                <a class="dropdown-item" v-else href="/#login">Log In</a>                
               </div>
             </span>
           </li>          
