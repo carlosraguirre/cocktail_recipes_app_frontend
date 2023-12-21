@@ -18,7 +18,7 @@
         </b>
         <br />
         <br />
-        <div><b>Tag: </b>{{ cocktail.tag }}</div>
+        <div v-if="cocktail.tag != null"><b>Tag: </b>{{ cocktail.tag }}</div>
         <br />
       </div>
 
