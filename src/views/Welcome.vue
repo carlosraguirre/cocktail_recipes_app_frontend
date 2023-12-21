@@ -100,9 +100,17 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer id="sticky-footer" class="flex-shrink-0 py-3 bg-dark text-white-50">
+      <div class="container text-center">
+        <small>Copyright &copy; <a href="https://carlosaguirre.dev" target="_blank">Carlos Aguirre</a></small>
+      </div>
+    </footer>
+
   </body>
   
 </template>
