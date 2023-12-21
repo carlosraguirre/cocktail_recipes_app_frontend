@@ -1,5 +1,5 @@
 <template>
-  <body data-spy="scroll" data-target=".navbar" data-offset="50" class= "welcome bg-light">
+  <body data-spy="scroll" data-target=".navbar" data-offset="50" class= "welcome">
     
     <!-- Nav -->
     <div>
@@ -43,31 +43,64 @@
         </div>
       </div>
       
-      <div class="content">
+      <div class="content container" style="padding-top:70px; padding-bottom:70px">
         <!-- About -->
-        <div id="about" class="container bg-light" style="padding-top:70px;padding-bottom:70px">
-          <h1><b>About </b></h1>
-          <br>
-          <p>
-            With your own Cocktail Rolodex, you can save new recipes and easily search them by name or ingredients. Want to categorize your saved cocktails? You can also set Favorites and create tags!
-          <br>
-          <!-- Click /here/ for a tutorial on how to use your Rolodex. link opens to modal with video -->
-          </p>
+        <div class="container px-5 pb-5">
+          <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+              <div class="p-2">
+                <img class="img-fluid" src="assets/Welcome1.jpeg" alt="..."/>
+              </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <div class="p-2">
+                <h1 class="mb-3"><b>About</b></h1>
+                  <p>
+                    With your own Cocktail Rolodex, you can save new recipes and easily search them by name or ingredients. Want to categorize your saved cocktails? You can also set Favorites and create tags!
+                  <br>
+                  <!-- Click /here/ for a tutorial on how to use your Rolodex. link opens to modal with video -->
+                  </p>
+              </div>
+            </div>
+          </div>
         </div>
+
         <!-- Login -->
-        <div id="login" class="container bg-light" style="padding-top:70px;padding-bottom:70px">
-          <h1><b>Login </b></h1>
-          <br>
-          <LoginSignUp />
+        <div class="container px-2 pb-5">
+          <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+              <div class="p-5">
+                <img class="img-fluid" src="assets/Welcome2.jpeg" alt="..."/>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="p-2">
+                <h1 class="mb-3"><b>Login</b></h1>
+                <LoginSignUp />
+              </div>
+            </div>
+          </div>
         </div>
+        
         <!-- Updates -->
-        <div id="updates" class="container bg-light" style="padding-top:70px;padding-bottom:70px">
-          <h1><b>Updates Corner! </b></h1>
-          <br>
-          <p>
-            Check here for updates made to this site.
-          </p>
+        <div class="container px-5 pb-5">
+          <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+              <div class="p-2">
+                <img class="img-fluid" src="assets/Welcome3.jpeg" alt="..."/>
+              </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <div class="p-2">
+                <h1 class="mb-3"><b>Updates Corner!</b></h1>
+                  <p>
+                    Check here for updates made to this site.
+                  </p>
+              </div>
+            </div>
+          </div>
         </div>
+        
       </div>
     </div>
   </body>

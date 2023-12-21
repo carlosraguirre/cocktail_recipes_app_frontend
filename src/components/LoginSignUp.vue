@@ -2,9 +2,9 @@
   <div>
 
     <!-- Login -->
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-10">
           <form v-on:submit.prevent="submit()">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="Email" v-model="newSessionParams.email" />
