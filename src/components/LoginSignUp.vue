@@ -15,14 +15,14 @@
             <div class="form-group">
               <input type="submit" class="btn btn-info rounded-pill" value="Login" />
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <a href="#">
                 Forget Password?
               </a>
-            </div>
-            <div class="form-group">
+            </div> -->
+            <!-- <div class="form-group">
               Don't have an account? <a href="#SignUpModal" data-toggle="modal">Sign Up!</a>
-            </div>
+            </div> -->
             <ul>
               <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
             </ul>   
@@ -70,6 +70,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
