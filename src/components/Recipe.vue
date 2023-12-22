@@ -41,7 +41,7 @@
                 <p><input type="text" v-model="editCocktailParams.tag" placeholder="Edit tag"></p>                
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary rounded-pill" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-info rounded-pill" data-dismiss="modal" v-on:click="updateCocktail()">Save changes</button>
               </div>
             </div>
