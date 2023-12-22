@@ -35,8 +35,8 @@
               </div>
               <div class="modal-body">
                 <p><input type="text" v-model="editCocktailParams.cocktail_name" placeholder="Name"></p>
-                <p><textarea v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
-                <p><textarea type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
+                <p><textarea class="textarea" v-model="editCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
+                <p><textarea class="textarea" type="text" v-model="editCocktailParams.direction" placeholder="Directions"></textarea></p>
                 <p><input type="text" v-model="editCocktailParams.recipe_link" placeholder="Link to Recipe"></p>
                 <p><input type="text" v-model="editCocktailParams.tag" placeholder="Edit tag"></p>                
               </div>
@@ -162,6 +162,12 @@
   padding: 15px;
   row-gap: 10px;
   column-gap: 10px;
+}
+.textarea {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 80%;
+  display: inline;
 }
 @media only screen and (max-width: 725px) {
   .box {

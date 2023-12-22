@@ -12,8 +12,8 @@
           </div>
           <div class="modal-body">
             <p><input type="text" v-model="newCocktailParams.cocktail_name" placeholder="Name"></p>
-            <p><textarea v-model="newCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
-            <p><textarea type="text" v-model="newCocktailParams.direction" placeholder="Directions"></textarea></p>
+            <p><textarea class="textarea" v-model="newCocktailParams.ingredient" placeholder="Ingredients"></textarea></p>
+            <p><textarea class="textarea" type="text" v-model="newCocktailParams.direction" placeholder="Directions"></textarea></p>
             <p><input type="text" v-model="newCocktailParams.recipe_link" placeholder="Link to Cocktail"></p>
             <p><input type="text" v-model="newCocktailParams.tag" placeholder="Add tags"></p>
           </div>
@@ -57,5 +57,10 @@
 </script>
 
 <style>
-
+.textarea {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 80%;
+  display: inline;
+}
 </style>
