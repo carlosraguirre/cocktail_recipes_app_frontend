@@ -20,9 +20,9 @@
                 Forget Password?
               </a>
             </div> -->
-            <!-- <div class="form-group">
+            <div class="form-group">
               Don't have an account? <a href="#SignUpModal" data-toggle="modal">Sign Up!</a>
-            </div> -->
+            </div>
             <ul>
               <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
             </ul>   
@@ -94,7 +94,7 @@
           .post("/users", this.newUserParams)
           .then((response) => {
             console.log(response.data);
-            this.$router.push("/myrolodex");
+            this.$router.push("/");
           })
           .catch((error) => {
             this.errors = error.response.data.errors;

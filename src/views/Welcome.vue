@@ -3,9 +3,9 @@
     
     <!-- Nav -->
     <div>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">  
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
         <ul class="navbar-nav flex-row">
-          <li class="nav-item active nav-bar-media-text-size">
+          <li class="nav-item active nav-bar-media-text-size" v-if="isLoggedIn()">
             <a class="nav-link" href="/MyRolodex">My Rolodex</a>
           </li>
           <!-- <li class="nav-item">
@@ -39,7 +39,7 @@
       <div class="jumbotron jumbotron bg-info border border-dark" style="padding-top:120px">
         <div class="container">
           <h1 class="display-3 text-black-50">Welcome to your <b class="text-white">Cocktail Rolodex!</b></h1>
-          <p class="lead">Ditch your bookmarks and create your own Rolodex.</p>
+          <p class="lead">Ditch your bookmarks and save your recipes here!.</p>
         </div>
       </div>
       
