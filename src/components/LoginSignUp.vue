@@ -60,7 +60,9 @@
                 </div>
               </form>
             </div>
-
+            <p class="font-italic" style="font-size: 12px">
+              *After creating an account, you need to sign in through the home page*
+            </p>
           </div>
 
           <div class="modal-footer">
