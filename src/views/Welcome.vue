@@ -57,9 +57,21 @@
                 <h1 class="mb-3"><b>About</b></h1>
                   <p>
                     With your own Cocktail Rolodex, you can save new recipes and easily search them by name or ingredients. Want to categorize your saved cocktails? You can also set Favorites and create tags!
-                  <br>
-                  <!-- Click /here/ for a tutorial on how to use your Rolodex. link opens to modal with video -->
+                  <br />
+                  <br />
+
+                  Click below for a tutorial on how to use your Rolodex. <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">(Show Video)</button>
                   </p>
+                  <p>
+
+                  </p>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                      <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/7nEja-I9nH8"></iframe>
+                      </div>
+                    </div>
+                  </div>             
               </div>
             </div>
           </div>
