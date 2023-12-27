@@ -39,7 +39,7 @@
       <div class="jumbotron jumbotron bg-info border border-dark" style="padding-top:120px">
         <div class="container">
           <h1 class="display-3 text-black-50">Welcome to your <b class="text-white">Cocktail Rolodex!</b></h1>
-          <p class="lead">Ditch your bookmarks and save your recipes here!.</p>
+          <p class="lead">Ditch your bookmarks and save your recipes here!</p>
         </div>
       </div>
       
@@ -108,6 +108,29 @@
                   <p>
                     Check here for updates made to this site.
                   </p>
+                  <table class="table table-borderless">
+                    <tbody>
+                      <tr>
+                        <th scope="row">Dec. 2023</th>
+                        <td>
+                          <p>
+                            Individual profiles feature is live. Anyone can create an account and add recipes to their Rolodex! Check the  video in the About section to see a tutorial.
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Mar. 2023</th>
+                        <td>
+                          <p>
+                            Cocktail Rolodex's first go-live. Currently only one user, the site owner, can add and update recipes. But anyone can view his Rolodex.
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+
+                  </table>
               </div>
             </div>
           </div>
