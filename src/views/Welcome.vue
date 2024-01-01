@@ -144,7 +144,7 @@
         axios.get(`/users/${localStorage.user_id}`).then((response) => {console.log(response)
         this.user = response.data;
         });
-      },      
+      },
     },
   }
 </script>
