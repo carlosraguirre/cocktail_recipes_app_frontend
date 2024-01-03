@@ -87,7 +87,7 @@
       return {
         newUserParams: {},
         errors: [],
-        newSessionParams: {},      
+        newSessionParams: {},
       };
     },
     methods: {
@@ -108,7 +108,7 @@
           .then((response) => {
             axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
             localStorage.setItem("jwt", response.data.jwt);
-            this.$router.push("/myrolodex");
+            this.$router.push({ path: `/user/${response.data.user_id}/myrolodex` });
           })
           .catch((error) => {
             console.log(error.response);
@@ -116,7 +116,7 @@
             this.email = "";
             this.password = "";
           });
-      },      
+      },  
     },
   };
 </script>

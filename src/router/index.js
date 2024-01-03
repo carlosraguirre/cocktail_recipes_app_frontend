@@ -10,6 +10,23 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    path: "/",
+    name: "welcome",
+    component: Welcome
+  },
+  {
+    path: "/user/:id/myrolodex",
+    name: "myrolodex",
+    component: MyRolodex,
+    // children: [
+    //   {
+    //     path: "myrolodex",
+    //     name: "myrolodex",
+    //     component: MyRolodex
+    //   },
+    // ]
+  },
+  {
     path: '/Login',
     name: 'Login',
     component: Login
@@ -19,16 +36,6 @@ const routes = [
     name: "logout",
     component: Logout
   },
-  {
-    path: "/myrolodex",
-    name: "myrolodex",
-    component: MyRolodex
-  },
-  {
-    path: "/",
-    name: "welcome",
-    component: Welcome
-  },   
 ]
 
 const router = new VueRouter({

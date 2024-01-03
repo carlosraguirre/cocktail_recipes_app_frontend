@@ -6,7 +6,7 @@
       <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
         <ul class="navbar-nav flex-row">
           <li class="nav-item active nav-bar-media-text-size" v-if="isLoggedIn()">
-            <a class="nav-link" href="/MyRolodex">My Rolodex</a>
+            <router-link class="nav-link" :to="{ path: `/user/${user.id}/myrolodex` }">My Rolodex</router-link>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
