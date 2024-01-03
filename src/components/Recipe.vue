@@ -4,7 +4,7 @@
       <!-- Recipe Index -->
       <div id="original">
         <br />
-        <h5><b>{{ cocktail.cocktail_name }} {{ cocktail.favorite ? '(Favorite)' : '' }}</b></h5>
+        <h5><b>{{ cocktail.cocktail_name }}</b> {{ cocktail.favorite ? '(Favorite)' : '' }}</h5>
         <br />
         <br />
         <b>Ingredients</b>

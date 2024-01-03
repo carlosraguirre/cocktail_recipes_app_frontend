@@ -112,6 +112,10 @@
       </div>
     </div>
 
+    <div v-if="!cocktails.length" >
+      <NoRecipes />
+    </div>
+
     <!-- Recipe Component -->
     <Recipe
       v-for="cocktail in filteredCocktails"
@@ -135,12 +139,14 @@
   import axios from "axios";
   import Recipe from '../components/Recipe.vue';
   import AddRecipeModal from '../components/AddRecipeModal.vue';
+  import NoRecipes from '../components/NoRecipes.vue';
   // import SortDropdown from '../components/SortDropdown.vue';
 
   export default {
     components: {
       Recipe,
       AddRecipeModal,
+      NoRecipes,
       // SortDropdown,
     },
     data: function () {
