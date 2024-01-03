@@ -70,7 +70,7 @@
     <br />
 
     <!-- Filter Buttons -->
-    <div id="below-nav">
+    <div id="below-nav" v-if="isLoggedIn()">
       <div id="filter-and-sort-area">
         <div><b>Filter by:</b></div>
         <div class="line-break"></div>
